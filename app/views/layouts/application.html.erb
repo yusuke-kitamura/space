@@ -10,6 +10,34 @@
   </head>
 
   <body>
+    <!-- header -->
+    <nav>
+      <% if user_signed_in? %>
+      <ul>
+        <li><%= link_to "お気に入りBOX", "#" %></li>
+        <li><%= link_to "リクエスト", "#" %></li>
+        <li><%= link_to "ログアウト", "#" %></li>
+      </ul>
+
+      <% elsif salon_signed_in? %>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+      <% else %>
+      <ul>
+        <li><%= link_to "SPACEとは?", "#" %></li>
+        <li><%= link_to "スタイリストログイン", "#" %></li>
+        <li><%= link_to "掲載者ログイン", "#" %></li>
+        <li><%= link_to "SPACEを探す", "#" %></li>
+        <li><%= link_to "掲載する", "#" %></li>
+      </ul>
+      <% end %>
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
