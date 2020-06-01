@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :user do # urlの頭にuser/を付与
+  	get '' => 'users#show'
+  	get 'edit' => 'users#edit'
   end
 
   root "homes#top"
