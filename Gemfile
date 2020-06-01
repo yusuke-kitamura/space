@@ -66,6 +66,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 
+# 画像投稿用
 gem "refile", require: "refile/rails", github: 'manfe/refile'
+# 画像加工用
 gem "refile-mini_magick"
 
