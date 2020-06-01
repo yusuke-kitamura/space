@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :user do # urlの頭にuser/を付与
-  	get '' => 'users#show'
-  	get 'edit' => 'users#edit'
+  	resource :users, only: [:show, :edit, :update]
+  	resources :salons, only: [:index, :show]
+  	resources :favorites, only: [:index, :show, :destroy]
   end
 
   root "homes#top"
@@ -13,5 +14,4 @@ Rails.application.routes.draw do
   namespace :salon do # urlの頭にsalon/を付与
   end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
