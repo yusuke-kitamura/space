@@ -25,5 +25,5 @@
 ## 設計書
 
 ### 機能一覧
-https://docs.google.com/spreadsheets/d/10Lmrt_nVO6WIm4cmyIanA6ydiFcSq-X5D-UYg-IsmcQ/edit#gid=0
+https://docs.google.com/spreadsheets/d/10Lmrt_nVO6WIm4cmyIanA6ydiFcSq-X5D-UYg-IsmcQ/edit?usp=sharing
 
