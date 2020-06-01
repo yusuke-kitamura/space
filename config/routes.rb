@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :user do # urlの頭にuser/を付与
   	resource :users, only: [:show, :edit, :update]
   	resources :salons, only: [:index, :show]
-  	resources :favorites, only: [:index, :show, :destroy]
+  	resources :favorites, only: [:index, :show, :create, :destroy]
   end
 
   root "homes#top"
