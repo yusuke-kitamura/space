@@ -11,31 +11,33 @@
 
   <body>
     <!-- header -->
+    <div class = "container">
     <nav>
       <% if user_signed_in? %>
       <ul>
         <li><%= link_to "お気に入りBOX", "#" %></li>
         <li><%= link_to "リクエスト", "#" %></li>
-        <li><%= link_to "ログアウト", "#" %></li>
+        <li><%= link_to "ログアウト", "#", method: :delete %></li>
       </ul>
 
       <% elsif salon_signed_in? %>
       <ul>
         <li></li>
         <li></li>
-        <li><%= link_to "ログアウト", "#" %></li>
+        <li><%= link_to "ログアウト", "#", method: :delete %></li>
       </ul>
 
       <% else %>
-      <ul>
-        <li><%= link_to "SPACEとは?", "#" %></li>
-        <li><%= link_to "スタイリストログイン", "#" %></li>
-        <li><%= link_to "掲載者ログイン", "#" %></li>
-        <li><%= link_to "SPACEを探す", "#" %></li>
-        <li><%= link_to "掲載する", "#" %></li>
+      <ul class = "list-inline">
+        <li class = "nav-item mr-3"><%= link_to "SPACEとは?", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "掲載者ログイン", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "SPACEを探す", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "掲載する", "#" %></li>
       </ul>
       <% end %>
     </nav>
+    </div>
 
     <%= yield %>
 
