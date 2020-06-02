@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :salons
+  devise_for :owners
   devise_for :users
 
   namespace :user do # urlの頭にuser/を付与
