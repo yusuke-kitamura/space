@@ -2,7 +2,7 @@
 
 one:
   salon_name: MyString
-  salon_image: MyString
+  salon_image_id: MyString
   explanation: MyText
   postal_code: MyString
   address: MyString
@@ -12,7 +12,7 @@ one:
 
 two:
   salon_name: MyString
-  salon_image: MyString
+  salon_image_id: MyString
   explanation: MyText
   postal_code: MyString
   address: MyString

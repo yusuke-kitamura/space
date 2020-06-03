@@ -2,7 +2,7 @@ class CreateSalons < ActiveRecord::Migration[5.2]
   def change
     create_table :salons do |t|
       t.string :salon_name
-      t.string :salon_image
+      t.string :salon_image_id
       t.text :explanation
       t.string :postal_code
       t.string :address

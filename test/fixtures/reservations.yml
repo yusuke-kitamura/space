@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  salon: one
+  date: 2020-06-03 01:03:53
+
+two:
+  user: two
+  salon: two
+  date: 2020-06-03 01:03:53

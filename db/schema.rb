@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_131048) do
+ActiveRecord::Schema.define(version: 2020_06_03_010353) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -33,15 +33,25 @@ ActiveRecord::Schema.define(version: 2020_06_02_131048) do
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "salon_id"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["salon_id"], name: "index_reservations_on_salon_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "salons", force: :cascade do |t|
     t.string "salon_name"
-    t.string "salon_image"
+    t.string "salon_image_id"
     t.text "explanation"
     t.string "postal_code"
     t.string "address"
     t.integer "seat_number"
     t.integer "price"
-    t.integer "time"
+    t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
