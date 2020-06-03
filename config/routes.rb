@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   	resource :users, only: [:show, :edit, :update]
   	resources :salons, only: [:index, :show]
   	resources :favorites, only: [:index, :show, :create, :destroy]
-  	resources :reservations, only: [:create, :show, :create, :destroy]
+  	resources :reservations, only: [:index, :show, :create, :destroy]
   end
 
   root "homes#top"

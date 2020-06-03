@@ -1,1 +1,30 @@
-<h1>editting user</h1>
+<h1>アカウント情報</h1>
+
+<%= form_with model: @user, url: {controller: 'user/users', action: 'update' },lacal: true do |f| %>
+	<div>
+    <label><%= f.label :name, "名前" %></label>
+    <%= f.text_field :name %>
+	</div><br>
+
+	<div>
+    <label><%= f.label :kana_name, "フリガナ" %></label>
+    <%= f.text_field :kana_name %>
+	</div><br>
+
+	<div>
+    <label><%= f.label :email, "メールアドレス" %></label>
+    <%= f.email_field :email %>
+	</div><br>
+
+	<div>
+    <label><%= f.label :postal_code, "郵便番号" %></label>
+    <%= f.text_field :postal_code %>
+	</div><br>
+
+	<div>
+    <label><%= f.label :address, "住所" %></label>
+    <%= f.text_field :address %>
+	</div><br>
+
+	<%= f.submit "変更する", class: "btn btn-primary" %>
+<% end %>

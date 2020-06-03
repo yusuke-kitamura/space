@@ -16,12 +16,13 @@
       <nav>
         <% if user_signed_in? %>
         <ul>
-        <li><%= link_to "お気に入りBOX", "#" %></li>
-        <li><%= link_to "リクエスト", "#" %></li>
+        <li><%= link_to "サロン検索", "#" %></li>
+        <li><%= link_to "お気に入り", "#" %></li>
+        <li><%= link_to "予約一覧", "#" %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
 
-        <% elsif salon_signed_in? %>
+        <% elsif owner_signed_in? %>
         <ul>
         <li></li>
         <li></li>
@@ -32,7 +33,7 @@
         <ul class = "nav p-4">
         <li class = "nav-item mr-3"><%= link_to "SPACEとは?", about_path %></li>
         <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path %></li>
-        <li class = "nav-item mr-3"><%= link_to "掲載者ログイン", new_salon_session_path %></li>
+        <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_salon_session_path %></li>
         <li class = "nav-item mr-3"><%= link_to "SPACEを探す", new_user_registration_path %></li>
         <li class = "nav-item mr-3"><%= link_to "掲載する", new_salon_registration_path %></li>
         </ul>
