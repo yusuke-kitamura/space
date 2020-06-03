@@ -71,3 +71,9 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用
 gem "refile-mini_magick"
 
+# 予約日時用
+gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+
+gem 'pry-byebug'
+
