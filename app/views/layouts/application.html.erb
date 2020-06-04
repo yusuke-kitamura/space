@@ -26,16 +26,16 @@
         <ul>
         <li></li>
         <li></li>
-        <li><%= link_to "ログアウト", destroy_salon_session_path, method: :delete %></li>
+        <li><%= link_to "ログアウト", destroy_owner_session_path, method: :delete %></li>
         </ul>
 
         <% else %>
         <ul class = "nav p-4">
         <li class = "nav-item mr-3"><%= link_to "SPACEとは?", about_path %></li>
         <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path %></li>
-        <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_salon_session_path %></li>
+        <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_owner_session_path %></li>
         <li class = "nav-item mr-3"><%= link_to "SPACEを探す", new_user_registration_path %></li>
-        <li class = "nav-item mr-3"><%= link_to "掲載する", new_salon_registration_path %></li>
+        <li class = "nav-item mr-3"><%= link_to "掲載する", new_owner_registration_path %></li>
         </ul>
         <% end %>
       </nav>

@@ -77,3 +77,5 @@ gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'pry-byebug'
 
+gem 'kaminari','~> 1.2.1'
+
