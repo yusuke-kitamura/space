@@ -15,15 +15,16 @@
       <div class = "container">
       <nav>
         <% if user_signed_in? %>
-        <ul>
-        <li><%= link_to "サロン検索", "#" %></li>
-        <li><%= link_to "お気に入り", "#" %></li>
-        <li><%= link_to "予約一覧", "#" %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <ul class = "nav p-4">
+        <li class = "nav-item mr-3"><%= link_to "サロン検索", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_user_users_path %></li>
+        <li class = "nav-item mr-3"><%= link_to "お気に入り", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "予約一覧", "#" %></li>
+        <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
 
         <% elsif owner_signed_in? %>
-        <ul>
+        <ul class = "nav p-4">
         <li></li>
         <li></li>
         <li><%= link_to "ログアウト", destroy_owner_session_path, method: :delete %></li>

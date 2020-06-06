@@ -1,30 +1,34 @@
-<h1>アカウント情報</h1>
+<div class = "row">
+<h2 class = "col-md-3 offset-1">アカウント情報</h2>
+</div>
 
 <%= form_with model: @user, url: {controller: 'user/users', action: 'update' },lacal: true do |f| %>
-	<div>
-    <label><%= f.label :name, "名前" %></label>
-    <%= f.text_field :name %>
+	<div class = "row">
+    <label class = "col-md-1 offset-1"><%= f.label :name, "名前" %></label>
+    <%= f.text_field :name, class: "col-md-6" %>
 	</div><br>
 
-	<div>
-    <label><%= f.label :kana_name, "フリガナ" %></label>
-    <%= f.text_field :kana_name %>
+	<div class = "row">
+    <label class = "col-md-1 offset-1"><%= f.label :kana_name, "フリガナ" %></label>
+    <%= f.text_field :kana_name, class: "col-md-6" %>
 	</div><br>
 
-	<div>
-    <label><%= f.label :email, "メールアドレス" %></label>
-    <%= f.email_field :email %>
+	<div class = "row">
+    <label class = "col-md-1 offset-1"><%= f.label :email, "メールアドレス" %></label>
+    <%= f.email_field :email, class: "col-md-6" %>
 	</div><br>
 
-	<div>
-    <label><%= f.label :postal_code, "郵便番号" %></label>
-    <%= f.text_field :postal_code %>
+	<div class = "row">
+    <label class = "col-md-1 offset-1"><%= f.label :postal_code, "郵便番号" %></label>
+    <%= f.text_field :postal_code, class: "col-md-6" %>
 	</div><br>
 
-	<div>
-    <label><%= f.label :address, "住所" %></label>
-    <%= f.text_field :address %>
+	<div class = "row">
+    <label class = "col-md-1 offset-1"><%= f.label :address, "住所" %></label>
+    <%= f.text_field :address, class: "col-md-6" %>
 	</div><br>
 
-	<%= f.submit "変更する", class: "btn btn-primary" %>
+	<div class = "row">
+	<%= f.submit "変更する", class: "btn btn-primary col-md-1 offset-1" %>
+	</div>
 <% end %>

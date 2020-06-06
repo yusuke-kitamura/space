@@ -1,4 +1,7 @@
-<h1>掲載中のサロン一覧</h1>
+<h2>サロンを掲載する</h2>
+<%= form_with model: @salon, url{controller: 'owner/salons', action: 'create'}, lacal: true do |f| %>
+<% end %>
+<h2>掲載中のサロン一覧</h2>
 
 <table>
   <%= @salons.each do |salon| %>
