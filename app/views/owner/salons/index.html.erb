@@ -1,10 +1,39 @@
 <h2>サロンを掲載する</h2>
-<%= form_with model: @salon, url{controller: 'owner/salons', action: 'create'}, lacal: true do |f| %>
+<%= form_with model: @salon, url: {controller: 'owner/salons', action: 'create'}, lacal: true do |f| %>
+	<div>
+		<%= f.attachment_field :salon_image %>
+	</div>
+
+	<div class = "row">
+		<%= f.label :salon_name, "サロン名", class: "col-md-1" %>
+		<%= f.text_field :salon_name, class: "col-md-2" %>
+	</div>
+
+	<div>
+		<%= f.label :postal_code, "郵便番号" %>
+		<%= f.text_field :postal_code %>
+	</div>
+
+	<div>
+		<%= f.label :address, "住所" %>
+		<%= f.text_field :address %>
+	</div>
+
+	<div>
+		<%= f.label :price, "価格(1時間)" %>
+		<%= f.text_field :price %>
+	</div>
+
 <% end %>
+
 <h2>掲載中のサロン一覧</h2>
 
 <table>
   <%= @salons.each do |salon| %>
+    <%= link_to owner_salon_path(salon) do %>
+  	<tr>
+  		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "100x100" %></td>
+  	</tr>
 
 	<tr>
 		<td><%= salon.salon_name %></td>
@@ -17,6 +46,6 @@
 	<tr>
 		<td>値段:<%= salon.price %></td>
 	</tr>
-
+    <% end %>
   <% end %>
 </table>
