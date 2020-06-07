@@ -1,1 +1,27 @@
 <h1>salon詳細</h1>
+
+<table>
+  	<tr>
+  		<td><%= attachment_image_tag @salon, :salon_image, format: 'jpg' %></td>
+  	</tr>
+
+	<tr>
+		<td><%= @salon.salon_name %></td>
+	</tr>
+
+	<tr>
+		<td>住所:〒<%= @salon.postal_code %><%= @salon.address %></td>
+	</tr>
+
+	<tr>
+		<td>値段:<%= @salon.price %></td>
+	</tr>
+
+	<tr>
+		<td>その他:<%= @salon.explanation %></td>
+	</tr>
+</table>
+
+<%= link_to "一覧へ戻る", user_salons_path %>
+<%= link_to "お気に入りへ登録", "#" %>
+<%= link_to "見学予約", "#" %>

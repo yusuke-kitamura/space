@@ -19,6 +19,9 @@ class Owner::SalonsController < ApplicationController
 	end
 
 	def update
+		@salon = Salon.find(params[:id])
+		@salon.update(salon_params)
+		redirect_to owner_salon_path, notice: "サロン情報の編集に成功しました"
 	end
 
 	def destroy
