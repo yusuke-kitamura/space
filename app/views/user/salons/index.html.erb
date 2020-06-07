@@ -1,14 +1,13 @@
 <h1>salon一覧</h1>
 
 <table>
-  <%= @salons.each do |salon| %>
-    <%= link_to user_salon_path(salon) do %>
+  <% @salons.each do |salon| %>
   	<tr>
   		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "100x100" %></td>
   	</tr>
 
 	<tr>
-		<td><%= salon.salon_name %></td>
+		<td><%= link_to salon.salon_name, user_salon_path(salon) %></td>
 	</tr>
 
 	<tr>
@@ -22,7 +21,6 @@
 	<tr>
 		<td>その他<%= salon.explanation %></td>
 	</tr>
-    <% end %>
   <% end %>
 </table>
 
