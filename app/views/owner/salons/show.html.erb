@@ -1,0 +1,23 @@
+<h2>掲載中のサロン詳細</h2>
+
+<table>
+  	<tr>
+  		<td><%= attachment_image_tag @salon, :salon_image, format: 'jpg' %></td>
+  	</tr>
+
+	<tr>
+		<td><%= @salon.salon_name %></td>
+	</tr>
+
+	<tr>
+		<td>住所:〒<%= @salon.postal_code %><%= @salon.address %></td>
+	</tr>
+
+	<tr>
+		<td>値段:<%= @salon.price %></td>
+	</tr>
+
+	<tr>
+		<td>その他:<%= @salon.explanation %></td>
+	</tr>
+</table>

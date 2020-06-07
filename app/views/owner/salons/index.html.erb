@@ -7,45 +7,61 @@
 	<div class = "row">
 		<%= f.label :salon_name, "サロン名", class: "col-md-1" %>
 		<%= f.text_field :salon_name, class: "col-md-2" %>
-	</div>
+	</div><br>
 
 	<div>
 		<%= f.label :postal_code, "郵便番号" %>
 		<%= f.text_field :postal_code %>
-	</div>
+	</div><br>
 
 	<div>
 		<%= f.label :address, "住所" %>
 		<%= f.text_field :address %>
+	</div><br>
+
+	<div>
+		<%= f.label :seat_number, "貸出可能席数" %>
+		<%= f.text_field :seat_number %>
+	</div><br>
+
+	<div>
+		<%= f.label :price, "価格(1ヶ月)" %>
+		<%= f.text_field :price %>
+	</div><br>
+
+	<div>
+		<%= f.label :explanation, "その他詳細" %>
+		<%= f.text_area :explanation %>
 	</div>
 
 	<div>
-		<%= f.label :price, "価格(1時間)" %>
-		<%= f.text_field :price %>
-	</div>
+	<%= f.submit "掲載する", class: "btn btn-primary" %>
+	</div><br>
 
 <% end %>
 
 <h2>掲載中のサロン一覧</h2>
 
 <table>
-  <%= @salons.each do |salon| %>
-    <%= link_to owner_salon_path(salon) do %>
+  <% @salons.each do |salon| %>
   	<tr>
-  		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "100x100" %></td>
+  		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg' %></td>
   	</tr>
 
 	<tr>
-		<td><%= salon.salon_name %></td>
+		<td><%=link_to salon.salon_name, owner_salon_path(salon) %></td>
 	</tr>
 
 	<tr>
-		<td>住所:<%= salon.postal_code %><%= salon.address %></td>
+		<td>住所:〒<%= salon.postal_code %><%= salon.address %></td>
 	</tr>
 
 	<tr>
 		<td>値段:<%= salon.price %></td>
 	</tr>
-    <% end %>
+
+	<tr>
+		<td>その他:<%= salon.explanation %></td>
+	</tr>
   <% end %>
 </table>

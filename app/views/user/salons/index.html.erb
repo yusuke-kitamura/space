@@ -2,6 +2,10 @@
 
 <table>
   <%= @salons.each do |salon| %>
+    <%= link_to user_salon_path(salon) do %>
+  	<tr>
+  		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "100x100" %></td>
+  	</tr>
 
 	<tr>
 		<td><%= salon.salon_name %></td>
@@ -15,6 +19,10 @@
 		<td>値段:<%= salon.price %></td>
 	</tr>
 
+	<tr>
+		<td>その他<%= salon.explanation %></td>
+	</tr>
+    <% end %>
   <% end %>
 </table>
 
