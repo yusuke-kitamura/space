@@ -22,5 +22,24 @@
 	</tr>
 </table>
 
+<!-- map表示ここから -->
+<div id='map'></div>
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 8
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4-e6C4U9nNBgu0hPvMkoB4SoRqDaRrI&callback=initMap" async defer></script>
+<!-- map表示ここまで -->
+
 <%= link_to "一覧へ戻る", owner_salons_path %>
 <%= link_to "編集する", edit_owner_salon_path(@salon) %>
