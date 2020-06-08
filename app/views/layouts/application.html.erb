@@ -17,26 +17,26 @@
         <% if user_signed_in? %>
         <ul class = "nav p-4">
         <li class = "nav-item"><%= link_to "サロン検索", "#", class: "btn btn-nav" %></li>
-        <li class = "nav-item"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-nav"  %></li>
-        <li class = "nav-item"><%= link_to "お気に入り", "#", class: "btn btn-nav"  %></li>
-        <li class = "nav-item"><%= link_to "予約一覧", "#", class: "btn btn-nav"  %></li>
-        <li class = "nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-nav"  %></li>
+        <li class = "nav-item"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-nav" %></li>
+        <li class = "nav-item"><%= link_to "お気に入り", "#", class: "btn btn-nav" %></li>
+        <li class = "nav-item"><%= link_to "予約一覧", "#", class: "btn btn-nav" %></li>
+        <li class = "nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-nav" %></li>
         </ul>
 
         <% elsif owner_signed_in? %>
         <ul class = "nav p-4">
-        <li></li>
-        <li></li>
+        <li><%= link_to "アカウント情報", edit_owner_owners_path, class: "btn btn-nav" %></li>
+        <li><%= link_to "予約一覧", "#", class: "btn btn-nav" %></li>
         <li><%= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "btn btn-nav"  %></li>
         </ul>
 
         <% else %>
         <ul class = "nav p-4">
         <li class = "nav-item mr-3"><%= link_to "SPACEとは?", about_path, class: "btn btn-nav"  %></li>
-        <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path, class: "btn btn-nav"  %></li>
-        <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_owner_session_path, class: "btn btn-nav"  %></li>
-        <li class = "nav-item mr-3"><%= link_to "SPACEを探す", new_user_registration_path, class: "btn btn-nav"  %></li>
-        <li class = "nav-item mr-3"><%= link_to "掲載する", new_owner_registration_path, class: "btn btn-nav"  %></li>
+        <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path, class: "btn btn-nav" %></li>
+        <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_owner_session_path, class: "btn btn-nav" %></li>
+        <li class = "nav-item mr-3"><%= link_to "SPACEを探す", new_user_registration_path, class: "btn btn-nav" %></li>
+        <li class = "nav-item mr-3"><%= link_to "掲載する", new_owner_registration_path, class: "btn btn-nav" %></li>
         </ul>
         <% end %>
       </nav>

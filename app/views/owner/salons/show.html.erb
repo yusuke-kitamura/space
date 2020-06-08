@@ -39,7 +39,8 @@ let geocoder
 function initMap(){
   // geocoderを初期化
   geocoder = new google.maps.Geocoder()
-  geocoder.geocode( { 'address': $('#map').attr('class')}, function(results, status) {
+  // geocoder.geocode(hash, callback_fuction)
+  geocoder.geocode({ 'address': $('#map').attr('class') }, function(results, status) {
     if (status == 'OK') {
 　　　// map.setCenterで地図が移動
       map.setCenter(results[0].geometry.location);
