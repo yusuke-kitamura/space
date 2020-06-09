@@ -2,39 +2,44 @@
 <%= form_with model: @salon, url: {controller: 'owner/salons', action: 'create'}, lacal: true do |f| %>
 	<div>
 		<%= f.attachment_field :salon_image %>
-	</div>
+	</div><br>
 
 	<div class = "row">
 		<%= f.label :salon_name, "サロン名", class: "col-md-1" %>
 		<%= f.text_field :salon_name, class: "col-md-2" %>
 	</div><br>
 
-	<div>
-		<%= f.label :postal_code, "郵便番号" %>
-		<%= f.text_field :postal_code %>
+	<div class = "row">
+		<%= f.label :postal_code, "郵便番号", class: "col-md-1" %>
+		<%= f.text_field :postal_code, class: "col-md-2" %>
 	</div><br>
 
-	<div>
-		<%= f.label :address, "住所" %>
-		<%= f.text_field :address %>
+	<div class = "row">
+		<%= f.label :prefecture_code, "都道府県", class: "col-md-1" %>
+		<%= f.select :prefecture_code, Salon.prefecture_codes.keys, {prompt: '選択してください'}, class: 'col-md-1' %>
 	</div><br>
 
-	<div>
-		<%= f.label :seat_number, "貸出可能席数" %>
-		<%= f.text_field :seat_number %>
+	<div class = "row">
+		<%= f.label :address, "市町村", class: "col-md-1"%>
+		<%= f.text_field :address, class: "col-md-2" %>
 	</div><br>
 
-	<div>
-		<%= f.label :price, "価格(1ヶ月)" %>
-		<%= f.text_field :price %>
+	<div class = "row">
+		<%= f.label :seat_number, "貸出可能席数", class: "col-md-1" %>
+		<%= f.text_field :seat_number, class: "col-md-2" %>
 	</div><br>
 
-	<div>
-		<%= f.label :explanation, "その他詳細" %>
-		<%= f.text_area :explanation %>
+	<div class = "row">
+		<%= f.label :price, "価格(1ヶ月)", class: "col-md-1" %>
+		<%= f.text_field :price, class: "col-md-2" %>
+	</div><br>
+
+	<div class = "row">
+		<%= f.label :explanation, "その他詳細", class: "col-md-1" %>
+		<%= f.text_area :explanation, class: "col-md-2" %>
 	</div>
 
-	<div>
+	<div class = "row">
 	<%= f.submit "掲載する", class: "btn btn-primary" %>
 	</div><br>
 
@@ -53,7 +58,7 @@
 	</tr>
 
 	<tr>
-		<td>住所:〒<%= salon.postal_code %><%= salon.address %></td>
+		<td>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></td>
 	</tr>
 
 	<tr>
