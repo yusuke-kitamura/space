@@ -80,3 +80,5 @@ gem 'pry-byebug'
 gem 'kaminari','~> 1.2.1'
 
 gem 'ransack'
+
+gem 'jp_prefecture'
