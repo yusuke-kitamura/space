@@ -75,7 +75,7 @@ function codeAddress(){
 <!-- map表示ここまで -->
 
 <!-- お気に入り有無によって表示ボタンを分岐 -->
-<% if Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
+<% if !Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
   <%= link_to "お気に入りへ登録", user_salon_favorites_path(@salon), method: :post %>
 <% else %>
   <%= link_to "お気に入り解除", user_salon_favorite_path(@salon), method: :delete %>
