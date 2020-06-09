@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favorites, dependent: :destroy
-  has_many :fav_salons, through: :favorites, source: :salon　# fav_salonsはfavoriteのsalon_idを使ってsalonsテーブルと繋げる
+  has_many :salons, through: :favorites　
   has_many :reservation, dependent: :destroy
 
   validates :name, presence: true

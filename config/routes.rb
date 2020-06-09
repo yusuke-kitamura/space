@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   namespace :user do # urlの頭にuser/を付与
   	resource :users, only: [:show, :edit, :update]
-  	resources :salons, only: [:index, :show]
-  	resources :favorites, only: [:index, :show, :create, :destroy]
+  	resources :salons, only: [:index, :show] do
+  	   resources :favorites, only: [:index, :show, :create, :destroy]
+    end
   	resources :reservations, only: [:index, :show, :create, :destroy]
   end
 

@@ -74,6 +74,12 @@ function codeAddress(){
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4-e6C4U9nNBgu0hPvMkoB4SoRqDaRrI&callback=initMap" async defer></script>
 <!-- map表示ここまで -->
 
+<!-- お気に入り有無によって表示ボタンを分岐 -->
+<% if Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
+  <%= link_to "お気に入りへ登録", user_salon_favorites_path(@salon), method: :post %>
+<% else %>
+  <%= link_to "お気に入り解除", user_salon_favorite_path(@salon), method: :delete %>
+<% end %>
+
 <%= link_to "一覧へ戻る", user_salons_path %>
-<%= link_to "お気に入りへ登録", "#" %>
 <%= link_to "見学予約", "#" %>

@@ -1,1 +1,20 @@
 <h1>お気に入り一覧</h1>
+
+<% @favorites.each do |favorite| %>
+	
+	<tr>
+		<td><%= link_to salon.favorite.salon_name%></td>
+	</tr>
+
+	<tr>
+		<td>住所:<%= favorite.postal_code %><%= favorite.address %></td>
+	</tr>
+
+	<tr>
+		<td>値段:<%= favorite.price %></td>
+	</tr>
+
+	<tr>
+		<td>その他<%= favorite.explanation %></td>
+	</tr>
+<% end %>
