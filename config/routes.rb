@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :user do # urlの頭にuser/を付与
+    get 'favorites' => 'favorites#index'
   	resource :users, only: [:show, :edit, :update]
   	resources :salons, only: [:index, :show] do
-  	   resources :favorites, only: [:index, :show, :create, :destroy]
+  	   resources :favorites, only: [:create, :destroy]
     end
   	resources :reservations, only: [:index, :show, :create, :destroy]
   end
