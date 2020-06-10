@@ -1,11 +1,13 @@
 class User::SalonsController < ApplicationController
 	def index
-		@salons = Salon.all
+    @q = Salon.ransack(params[:q])
+    @salons = @q.result(distinct: true)
 	end
 
 	def show
 		@salon = Salon.find(params[:id])
 	end
+
 
 	private
 	def salon_params

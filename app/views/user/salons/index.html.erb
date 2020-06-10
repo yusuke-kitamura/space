@@ -1,5 +1,11 @@
 <h1>salon一覧</h1>
 
+<%= search_form_for @q, url: user_salons_path do |f| %>
+  <%= f.label :salon_name, "Keyword" %>
+  <%= f.search_field :salon_name_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+
 <table>
   <% @salons.each do |salon| %>
   	<tr>
