@@ -1,1 +1,10 @@
 <h1>予約画面</h1>
+
+<%= form_with model: @reservation, url: {controller: 'user/reservations', action: 'create'}, lacal: true do |f| %>
+
+
+<%= f.label :date, "予約日" %>
+<%= f.text_field :date %>
+<%= f.submit "見学予約" %>
+
+<% end %>
