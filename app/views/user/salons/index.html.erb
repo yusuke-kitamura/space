@@ -1,10 +1,16 @@
 <h1>salon一覧</h1>
 
+<!-- 検索フォーム -->
 <%= search_form_for @q, url: user_salons_path do |f| %>
   <%= f.label :salon_name, "Keyword" %>
-  <%= f.search_field :salon_name_cont %>
+  <%= f.search_field :salon_name_cont %><br>
+
+  <%= f.label :prefecture_code, "エリア" %>
+　<%= f.select :prefecture_code, Salon.prefecture_codes.keys %>
+
   <%= f.submit "検索" %>
 <% end %>
+<!-- 検索フォーム -->
 
 <table>
   <% @salons.each do |salon| %>
