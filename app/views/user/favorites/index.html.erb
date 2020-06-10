@@ -1,20 +1,25 @@
 <h1>お気に入り一覧</h1>
 
-<% @favorites.each do |favorite| %>
+<table>
+<% @user.salons.each do |salon| %>
+	<tr>
+  		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400" %></td>
+  	</tr>
 	
 	<tr>
-		<td><%= link_to salon.favorite.salon_name%></td>
+		<td><%= salon.salon_name%></td>
 	</tr>
 
 	<tr>
-		<td>住所:<%= favorite.postal_code %><%= favorite.address %></td>
+		<td>住所:<%= salon.postal_code %><%= salon.address %></td>
 	</tr>
 
 	<tr>
-		<td>値段:<%= favorite.price %></td>
+		<td>値段:<%= salon.price %></td>
 	</tr>
 
 	<tr>
-		<td>その他<%= favorite.explanation %></td>
+		<td>その他<%= salon.explanation %></td>
 	</tr>
 <% end %>
+</table>
