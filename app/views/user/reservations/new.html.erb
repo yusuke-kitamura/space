@@ -1,2 +1,8 @@
 <h1>予約画面</h1>
 
+<!-- 予約フォーム -->
+<%= form_for [@salon, @reservation]  do |f| %>
+<%= f.label :date %>
+<%= f.text_field :date %>
+<%= f.submit "見学予約" %>
+<% end %>

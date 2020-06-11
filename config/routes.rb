@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   	resource :users, only: [:show, :edit, :update]
   	resources :salons, only: [:index, :show] do
   	   resources :favorites, only: [:create, :destroy]
-       resource :reservations, only: [:new, :create, :destroy, :index]
+       resources :reservations, only: [:new, :create, :destroy, :index]
     end
   end
 

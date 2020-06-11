@@ -68,4 +68,12 @@ function codeAddress(){
 <% end %>
 
 <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-primary" %>
-<%= link_to "見学予約", new_user_salon_reservations_path(@salon), class: "btn btn-primary" %>
+
+<!-- 予約フォーム -->
+<%= form_for [@salon, @salon.reservations.new] do |f| %>
+<%= f.hidden_field :salon_id, value: @salon.id %>
+<%= f.label :date %>
+<%= f.text_field :date %>
+<%= f.submit "見学予約" %>
+<% end %>
+

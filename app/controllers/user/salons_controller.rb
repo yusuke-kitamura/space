@@ -6,6 +6,7 @@ class User::SalonsController < ApplicationController
 
 	def show
 		@salon = Salon.find(params[:id])
+		@reservation = Reservation.new
 	end
 
 	private

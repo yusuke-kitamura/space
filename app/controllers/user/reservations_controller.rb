@@ -5,7 +5,8 @@ class User::ReservationsController < ApplicationController
 	end
 
 	def create
-		
+		@reservation = current_user.reservations.create(reservation_params)
+		redirec_back
 	end
 
 	def destroy
