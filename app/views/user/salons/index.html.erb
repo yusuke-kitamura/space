@@ -6,8 +6,8 @@
     <%= f.label :prefecture_code, "エリア", class: "col-md-2 offset-2" %>
 　  <%= f.select :prefecture_code, Salon.prefecture_codes.keys, class: "col-lg-2" %><br>
 
-    <%= f.label :salon_name, "最寄り駅", class: "col-md-2 offset-2" %>
-    <%= f.search_field :salon_name_cont, class: "col-md-2" %><br>
+    <%= f.label :station, "最寄り駅", class: "col-md-2 offset-2" %>
+    <%= f.search_field :station_cont, class: "col-md-2" %><br>
 
     <%= f.submit "絞り込み", class: "col-md-2 offset-4 btn btn-info" %>
   </tr><br>
@@ -21,7 +21,7 @@
   	
 		<td class = "col-md-2 offset-2">
 			<strong><%= link_to salon.salon_name, user_salon_path(salon) %></strong><br>
-			住所:〒<%= salon.postal_code %><%= salon.address %><br>
+			住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %><br>
 			値段:<%= salon.price %><br>
 			その他<%= salon.explanation %>
 		</td>

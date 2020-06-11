@@ -16,7 +16,7 @@
 
 	<div class = "row">
 		<%= f.label :prefecture_code, "都道府県", class: "col-md-1" %>
-		<%= f.select :prefecture_code, Salon.prefecture_codes.keys, {prompt: '選択してください'}, class: 'col-md-1' %>
+		<%= f.select :prefecture_code, options_for_select(Salon.prefecture_codes), {}, class: 'col-md-1' %>
 	</div><br>
 
 	<div class = "row">
