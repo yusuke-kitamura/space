@@ -71,9 +71,12 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用
 gem "refile-mini_magick"
 
+# font-awesome
+gem 'font-awesome-rails'
+
 # 予約日時用
-gem 'bootstrap3-datetimepicker-rails'
-gem 'momentjs-rails', '>= 2.9.0'
+gem 'momentjs-rails'
+gem 'bootstrap4-datetime-picker-rails'
 
 gem 'pry-byebug'
 
@@ -81,4 +84,5 @@ gem 'kaminari','~> 1.2.1'
 
 # 検索用
 gem 'ransack'
+
 
