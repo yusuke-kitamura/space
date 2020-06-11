@@ -70,7 +70,7 @@ function codeAddress(){
 <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-primary" %>
 
 <!-- 予約フォーム -->
-<%= form_for [@salon, @salon.reservations.new] do |f| %>
+<%= form_with url: user_salon_reservations_path(@salon), method: :post do |f| %>
 <%= f.hidden_field :salon_id, value: @salon.id %>
 <%= f.label :date %>
 <%= f.text_field :date %>

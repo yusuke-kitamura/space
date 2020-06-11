@@ -4,7 +4,7 @@
 <%= search_form_for @q, url: user_salons_path do |f| %>
   <tr class ="row">
     <%= f.label :prefecture_code, "エリア", class: "col-md-2 offset-2" %>
-　  <%= f.select :prefecture_code, Salon.prefecture_codes.keys, class: "col-lg-2" %><br>
+　  <%= f.select :prefecture_code, options_for_select(Salon.prefecture_codes), {}, class: "col-lg-2" %><br>
 
     <%= f.label :station, "最寄り駅", class: "col-md-2 offset-2" %>
     <%= f.search_field :station_cont, class: "col-md-2" %><br>
@@ -19,7 +19,7 @@
   		<td class = "col-md-2 offset-2"><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400" %></td>
   	
 		<td class = "col-md-2 offset-2">
-			<strong><%=link_to salon.salon_name, owner_salon_path(salon) %></strong></br>
+			<strong><%=link_to salon.salon_name, user_salon_path(salon) %></strong></br>
 			<p>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p>
 			<p>最寄り駅:<%= salon.station %></p>
 			<p>値段:<%= salon.price %></p>

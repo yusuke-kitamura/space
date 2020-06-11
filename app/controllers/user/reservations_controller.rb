@@ -6,7 +6,7 @@ class User::ReservationsController < ApplicationController
 
 	def create
 		@reservation = current_user.reservations.create(reservation_params)
-		redirec_back
+		redirect_back(fallback_location: root_path), notice: "予約完了"
 	end
 
 	def destroy
