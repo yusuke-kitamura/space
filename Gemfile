@@ -71,10 +71,9 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用
 gem "refile-mini_magick"
 
-# font-awesome
 gem 'font-awesome-rails'
 
-# 予約日時用
+# JavaScriptの日付や時刻などを扱いやすくするためのライブラリ
 gem 'momentjs-rails'
 gem 'bootstrap4-datetime-picker-rails'
 

@@ -72,10 +72,15 @@ function codeAddress(){
 <!-- 予約フォーム -->
 <%= form_with url: user_salon_reservations_path(@salon), method: :post do |f| %>
 <%= f.hidden_field :salon_id, value: @salon.id %>
-<%= f.label :date %>
-<%= f.text_field :date %>
+  <div class="input-group" data-target-input="nearest">
+    <%= f.label :date, "見学日" %>
+    <%= f.text_field :date %>
+    <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+    </div>
+</div>
 
-<%= f.submit "見学予約" %>
+<%= f.submit "見学予約", class: "btn btn-info" %>
 <% end %>
 
 

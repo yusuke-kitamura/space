@@ -16,5 +16,15 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require moment
-//= require bootstrap-datetimepicker
+//= require moment/ja.js
+//= require tempusdominus-bootstrap-4.js
+
+//カレンダー機能
+<script>
+  $(function () {
+    $('.datepicker').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    });
+  });
+</script>
 
