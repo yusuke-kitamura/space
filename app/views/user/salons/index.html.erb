@@ -2,37 +2,31 @@
 
 <!-- 検索フォーム -->
 <%= search_form_for @q, url: user_salons_path do |f| %>
-  <%= f.label :salon_name, "Keyword" %>
-  <%= f.search_field :salon_name_cont %><br>
+  <tr class ="row">
+    <%= f.label :prefecture_code, "エリア", class: "col-md-2 offset-2" %>
+　  <%= f.select :prefecture_code, Salon.prefecture_codes.keys, class: "col-lg-2" %><br>
 
-  <%= f.label :prefecture_code, "エリア" %>
-　<%= f.select :prefecture_code, Salon.prefecture_codes.keys %>
+    <%= f.label :salon_name, "最寄り駅", class: "col-md-2 offset-2" %>
+    <%= f.search_field :salon_name_cont, class: "col-md-2" %><br>
 
-  <%= f.submit "検索" %>
+    <%= f.submit "絞り込み", class: "col-md-2 offset-4 btn btn-info" %>
+  </tr><br>
 <% end %>
 <!-- 検索フォーム -->
 
-<table>
+<table class="table table-striped">
   <% @salons.each do |salon| %>
-  	<tr>
-  		<td><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400" %></td>
-  	</tr>
-
-	<tr>
-		<td><%= link_to salon.salon_name, user_salon_path(salon) %></td>
+  	<tr class = "row">
+  		<td class = "col-md-2 offset-2"><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400" %></td>
+  	
+		<td class = "col-md-2 offset-2">
+			<strong><%= link_to salon.salon_name, user_salon_path(salon) %></strong><br>
+			住所:〒<%= salon.postal_code %><%= salon.address %><br>
+			値段:<%= salon.price %><br>
+			その他<%= salon.explanation %>
+		</td>
 	</tr>
 
-	<tr>
-		<td>住所:<%= salon.postal_code %><%= salon.address %></td>
-	</tr>
-
-	<tr>
-		<td>値段:<%= salon.price %></td>
-	</tr>
-
-	<tr>
-		<td>その他<%= salon.explanation %></td>
-	</tr>
   <% end %>
 </table>
 

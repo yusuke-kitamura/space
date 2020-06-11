@@ -1,30 +1,16 @@
 <h1>salon詳細</h1>
 
-<table>
-  	<tr>
-  		<td><%= attachment_image_tag @salon, :salon_image, format: 'jpg' %></td>
-  	</tr>
+  <div class = "row">
+    <div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
-	<tr>
-		<td><%= @salon.salon_name %></td>
-	</tr>
-
-	<tr>
-		<td>〒<%= @salon.postal_code %></td>
-	</tr>
-
-	<tr>
-		<td><%= @salon.address %></td>
-	</tr>
-
-	<tr>
-		<td>値段:<%= @salon.price %></td>
-	</tr>
-
-	<tr>
-		<td>その他:<%= @salon.explanation %></td>
-	</tr>
-</table>
+    <div class = "col-md-4 offset-1">
+		  <strong><%= @salon.salon_name %></strong>
+      <p>〒<%= @salon.postal_code %></p>
+      <p><%= @salon.address %></p>
+      <p>値段:<%= @salon.price %></p>
+      <p>その他:<%= @salon.explanation %></p>
+    </div>
+	</div><br>
 
 <!-- map表示ここから -->
 <div id='map' class="<%= @salon.address %>"></div>
