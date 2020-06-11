@@ -27,8 +27,9 @@ class Owner::SalonsController < ApplicationController
 	def destroy
 	end
 
+	# prefecture_codeをintへ変換
 	private
 	def salon_params
-		params.require(:salon).permit(:salon_name, :salon_image, :explanation, :postal_code, :address, :price, :seat_number, :prefecture_code, :station)
+		params.require(:salon).permit(:salon_name, :salon_image, :explanation, :postal_code, :address, :price, :seat_number, :prefecture_code, :station).merge(prefecture_code: params[:salon][:prefecture_code].to_i)
 	end
 end
