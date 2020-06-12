@@ -1,27 +1,25 @@
 <div class = "row">
-<h2 class = "col-md-3 offset-4">ログイン</h2>
-</div>
+<h2 class = "offset-4">スタイリストログイン</h2>
+</div><br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="row">
-    <%= f.label :email, "メールアドレス", class: "col-md-1 offset-4" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-3" %>
-  </div><br>
+  <div class="row"><%= f.label :email, "メールアドレス", class: "offset-4" %></div>
+  <div class="row"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-4 offset-4" %></div><br>
 
-  <div class="row">
-    <%= f.label :password, "パスワード", class: "col-md-1 offset-4"  %>
-    <%= f.password_field :password, autocomplete: "current-password", class: "col-md-3" %>
-  </div>
+  <div class="row"><%= f.label :password, "パスワード", class: "offset-4"  %></div>
+  <div class="row"><%= f.password_field :password, autocomplete: "current-password", class: "col-md-4 offset-4" %></div><br>
 
   <% if devise_mapping.rememberable? %>
     <div class="row">
+      <div class = "offset-4">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+      <%= f.label :remember_me, "パスワードを保存する" %>
+      </div>
+    </div><br>
   <% end %>
 
   <div class="row-action">
-    <%= f.submit "ログイン", class: "btn btn-info col-md-3 offset-5" %>
+    <%= f.submit "ログイン", class: "btn btn-info col-md-4 offset-4" %>
   </div>
 <% end %>
 
