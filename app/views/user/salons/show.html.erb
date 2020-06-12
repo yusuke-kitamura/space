@@ -71,7 +71,6 @@ function codeAddress(){
 
 <!-- 予約フォーム -->
 <%= form_with url: user_salon_reservations_path(@salon), method: :post do |f| %>
-<%= f.hidden_field :salon_id, value: @salon.id %>
   <div class="input-group" data-target-input="nearest">
     <%= f.label :date, "見学日" %>
     <%= f.text_field :date %>

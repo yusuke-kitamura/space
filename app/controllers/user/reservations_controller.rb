@@ -5,8 +5,12 @@ class User::ReservationsController < ApplicationController
 	end
 
 	def create
-		@reservation = current_user.reservations.create(reservation_params)
-		redirect_back(fallback_location: root_path), notice: "予約完了"
+		user = current_user
+		salon = Salon.find(params[:salon_id])
+		reservation = Reservation.create(salon_id: salon.id, user_id: user.id)
+		reservation.save
+		byebug
+		redirect_back(fallback_location: root_path)
 	end
 
 	def destroy
