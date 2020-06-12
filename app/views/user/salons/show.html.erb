@@ -1,5 +1,11 @@
 <h1>salon詳細</h1>
 
+<% if flash[:notice] %>
+<div class="flash">
+  <%= flash[:notice] %>
+</div>
+<% end %>
+
   <div class = "row">
     <div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
@@ -69,18 +75,14 @@ function codeAddress(){
 
 <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-primary" %>
 
-<!-- 予約フォーム -->
-<%= form_with url: user_salon_reservations_path(@salon), method: :post do |f| %>
-  <div class="input-group" data-target-input="nearest">
-    <%= f.label :date, "見学日" %>
-    <%= f.text_field :date %>
-    <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
-        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-    </div>
-</div>
-
-<%= f.submit "見学予約", class: "btn btn-info" %>
+<!-- 予約 -->
+<%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
+  <%= f.hidden_field :salon_id, value: @salon.id %>
+  <%= f.label :date, "見学日" %>
+  <%= f.datetime_field :date %>
+  <%= f.submit "見学予約", class: "btn btn-info" %>
 <% end %>
+
 
 
 

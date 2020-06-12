@@ -1,19 +1,16 @@
 class User::ReservationsController < ApplicationController
-
-	def new
-		
-	end
-
 	def create
-		user = current_user
-		salon = Salon.find(params[:salon_id])
-		reservation = Reservation.create(salon_id: salon.id, user_id: user.id)
-		reservation.save
-		byebug
+		@reservation = Reservation.new(reservation_params)
+		@reservation.user_id = current_user.id
+		@reservation.save
 		redirect_back(fallback_location: root_path)
 	end
 
 	def destroy
+	end
+
+	def index
+		@reservations = Reservation.all
 	end
 
 	private
