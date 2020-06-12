@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   namespace :user do # urlの頭にuser/を付与
     get 'favorites' => 'favorites#index'
+    get 'reservations' => 'reservations#index'
   	resource :users, only: [:show, :edit, :update]
   	resources :salons, only: [:index, :show] do
   	   resources :favorites, only: [:create, :destroy]
-       resources :reservations, only: [:create, :destroy, :index]
+       resources :reservations, only: [:create, :destroy]
     end
   end
 
