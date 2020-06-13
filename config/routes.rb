@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   get 'about' => 'homes#about'
 
   namespace :owner do # urlの頭にowner/を付与
+    get 'reservations' => 'reservations#index'
   	resource :owners, only: [:show, :edit, :update, :destroy]
   	resources :salons
-  	resources :reservations, only: [:index, :show]
   end
 
 end

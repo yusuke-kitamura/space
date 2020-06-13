@@ -1,0 +1,13 @@
+<h1>予約時間</h1>
+
+<table class="table table-striped">
+<% @reservations.each do |reservation| %>
+	<tr class = "row">
+		<td class = "col-md-2 offset-2">
+			<p><%= reservation.user.name %>様</p></br>
+			<p><%= reservation.user.kana_name %></p>
+			<p>予約時間:<%= reservation.date %></p>
+		</td>
+	</tr>
+<% end %>
+</table>
