@@ -84,4 +84,9 @@ gem 'kaminari','~> 1.2.1'
 # 検索用
 gem 'ransack'
 
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
+
 
