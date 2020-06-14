@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_051024) do
+ActiveRecord::Schema.define(version: 2020_06_13_164701) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 2020_06_11_051024) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "company"
     t.index ["email"], name: "index_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
@@ -36,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_051024) do
   create_table "reservations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "salon_id"
-    t.datetime "date"
+    t.datetime "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["salon_id"], name: "index_reservations_on_salon_id"
@@ -44,18 +43,18 @@ ActiveRecord::Schema.define(version: 2020_06_11_051024) do
   end
 
   create_table "salons", force: :cascade do |t|
-    t.string "salon_name"
-    t.string "salon_image_id"
-    t.text "explanation"
-    t.string "postal_code"
-    t.string "address"
-    t.integer "seat_number"
-    t.integer "price"
-    t.datetime "time"
+    t.string "salon_name", null: false
+    t.string "salon_image_id", null: false
+    t.text "explanation", null: false
+    t.string "postal_code", null: false
+    t.string "address", null: false
+    t.integer "seat_number", null: false
+    t.integer "price", null: false
+    t.integer "time", null: false
+    t.integer "prefecture_code", null: false
+    t.string "station", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefecture_code", default: 0
-    t.string "station"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,8 +65,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_051024) do
     t.datetime "remember_created_at"
     t.string "name"
     t.string "kana_name"
-    t.string "postal_code"
-    t.string "address"
+    t.string "prefecture_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
