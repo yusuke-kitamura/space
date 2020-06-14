@@ -14,8 +14,8 @@
   <div class="row"><%= f.label :email, "メールアドレス", class: "offset-4" %></div>
   <div class="row"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-4 offset-4"  %></div><br>
 
-  <div class="row"><%= f.label :prefecture_code, "エリア", class: "offset-4" %></div>
-  <div class="row"><%= f.text_field :prefecture_code, class: "col-md-4 offset-4"  %></div><br>
+  <div class="row"><%= f.label :phone_number, "電話番号", class: "offset-4" %></div>
+  <div class="row"><%= f.text_field :phone_number, class: "col-md-4 offset-4", placeholder: "ハイフン不要" %></div><br>
 
   <div class="row">
     <%= f.label :password, "パスワード", class: "offset-4" %>

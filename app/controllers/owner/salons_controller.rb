@@ -6,7 +6,7 @@ class Owner::SalonsController < ApplicationController
 
 	def create
 		@salon = Salon.new(salon_params)
-		@salon.save
+		@salon.save!
 		redirect_to owner_salons_path
 	end
 

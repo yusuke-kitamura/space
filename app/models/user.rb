@@ -9,5 +9,4 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :kana_name, presence: true
   validates :email, presence: true
-  validates :prefecture_code, presence: true
 end

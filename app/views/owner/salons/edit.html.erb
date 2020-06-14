@@ -17,6 +17,11 @@
  	</div><br>
 
  	<div class = "row">
+ 		<%= f.label :prefecture_code, "都道府県", class: "col-md-1 offset-3" %>
+		<%= f.select :prefecture_code, options_for_select(Salon.prefecture_codes), {}, class: 'col-md-5' %>
+	</div><br>
+
+ 	<div class = "row">
 		<%= f.label :address, "住所", class: "col-md-1 offset-3"  %>
 		<%= f.text_field :address, class: "col-md-5"  %>
 	</div><br>

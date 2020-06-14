@@ -5,7 +5,7 @@
   <tr class ="row">
     <%= f.label :prefecture_code, "エリア", class: "col-md-2 offset-2" %>
 　  <%= f.select :prefecture_code, options_for_select(Salon.prefecture_codes), {}, class: "col-md-2" %><br>
-
+    
     <%= f.label :station, "最寄り駅", class: "col-md-2 offset-2" %>
     <%= f.search_field :station_cont, class: "col-md-2" %><br>
 
