@@ -17,11 +17,11 @@
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
  
- .container{
- 	margin-right: 10%;
- }
-
- footer{
+ 
+ .bottom{
+ 	height: 300px;
  	text-align:center;
- 	margin-top:30px;
+ 	padding-top:140px;
+ 	background-color: grey;
+ 	margin-top: 100px;
  }
