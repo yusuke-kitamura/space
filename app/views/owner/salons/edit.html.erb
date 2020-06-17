@@ -1,14 +1,16 @@
-<h2>サロン編集</h2>
+<div class = "row">
+	<h1 class = "offset-3">サロン編集</h1>
+</div>
 
 <%= form_with model: @salon, url: {controller: 'owner/salons', action: 'update'}, local: true do |f| %>
  	<div class = "row">
- 	<%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400", class: "col-md-3 offset-4"%>
- 	<%= f.attachment_field :salon_image %>
+ 		<%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400", class: "col-md-3 offset-4"%>
+ 		<%= f.attachment_field :salon_image %>
  	</div><br>
 
  	<div class = "row">
- 	<%= f.label :salon_name, "サロン名", class: "col-md-1 offset-3" %>
- 	<%= f.text_field :salon_name, class: "col-md-5" %>
+ 		<%= f.label :salon_name, "サロン名", class: "col-md-1 offset-3" %>
+ 		<%= f.text_field :salon_name, class: "col-md-5" %>
  	</div><br>
 
  	<div class = "row">
@@ -47,6 +49,6 @@
 	</div><br>
 
 	<div class = "row">
-	<%= f.submit "更新する", class: "btn btn-primary col-md-2 offset-5" %>
+		<%= f.submit "更新する", class: "btn btn-info col-md-2 offset-5" %>
 	</div>
 <% end %>
