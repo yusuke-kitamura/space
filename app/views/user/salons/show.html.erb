@@ -1,16 +1,41 @@
-<h1>salon詳細</h1>
+<div class = "row">
+  <h1 class = "offset-3">サロン詳細</h1>
+</div>
 
   <div class = "row">
     <div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
-    <div class = "col-md-4 offset-1">
+    <div class = "col-md-4 offset-2">
 		  <strong><%= @salon.salon_name %></strong>
-      <p>〒<%= @salon.postal_code %></p>
-      <p><%= @salon.address %></p>
+      <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p>
+      <p>最寄駅:<%= @salon.station %></p>
       <p>値段:<%= @salon.price %></p>
+      <p>貸出座席数:<%= @salon.seat_number %></p>
       <p>その他:<%= @salon.explanation %></p>
     </div>
 	</div><br>
+
+  <!-- 予約済みの場合、予約フォームは出さないように分岐 -->
+<% if !Reservation.exists?(user_id:current_user.id,salon_id:@salon.id) %>
+  <%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
+    <%= f.hidden_field :salon_id, value: @salon.id %>
+      <div class = "row">
+        <%= f.label :date, "見学日", class: "col-md-1 offset-3" %>
+      </div>
+      <div class = "row">
+        <%= f.datetime_field :date, class: "col-md-3 offset-3" %>
+      </div><br>
+
+      <div class = "row-action">
+        <%= f.submit "見学予約", class: "btn btn-info col-md-3 offset-3" %>
+      </div><br>
+  <% end %>
+<% else %>
+      <div class = "row">
+        <div class = "btn btn-danger col-md-3 offset-3">見学または予約済み</div>
+      </div><br>
+<% end %>
+
 
 <!-- map表示ここから -->
 <div id='map' class="<%= @salon.address %>"></div>
@@ -18,6 +43,7 @@
 #map{
   height: 600px;
   width: 50%;
+  margin-left: 450px;
 }
 </style>
 
@@ -61,22 +87,14 @@ function codeAddress(){
 <!-- map表示ここまで -->
 
 <!-- お気に入り有無によって表示ボタンを分岐 -->
-<% if !Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
-  <%= link_to "お気に入りへ登録", user_salon_favorites_path(@salon), method: :post, class: "btn btn-primary" %>
-<% else %>
-  <%= link_to "お気に入り解除", user_salon_favorite_path(@salon), method: :delete,class: "btn btn-danger" %>
-<% end %>
+<div class = "row">
+  <% if !Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
+    <%= link_to "お気に入りへ登録", user_salon_favorites_path(@salon), method: :post, class: "btn btn-info col-md-2 offset-3" %>
+  <% else %>
+    <%= link_to "お気に入り解除", user_salon_favorite_path(@salon), method: :delete,class: "btn btn-danger col-md-2 offset-3" %>
+  <% end %>
 
-<%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-primary" %>
-
-<!-- 予約 -->
-<%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
-  <%= f.hidden_field :salon_id, value: @salon.id %>
-  <%= f.label :date, "見学日" %>
-  <%= f.datetime_field :date %>
-  <%= f.submit "見学予約", class: "btn btn-info" %>
-<% end %>
-
-
+  <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-info col-md-2 offset-1" %>
+</div>
 
 
