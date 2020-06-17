@@ -1,11 +1,19 @@
-<h1>予約時間</h1>
+<div class = "row">
+	<h1 class = "offset-2">予約者様情報</h1><br>
+</div>
+
+<div class = "row">
+	<p class = "offset-2">記載の電話番号にご連絡いただき、予約時間の確認及び予約確定のご連絡をお願いいたします。</p>
+</div>
 
 <table class="table table-striped">
 <% @reservations.each do |reservation| %>
 	<tr class = "row">
-		<td class = "col-md-2 offset-2">
-			<p><%= reservation.user.name %>様</p></br>
-			<p><%= reservation.user.kana_name %></p>
+		<td class = "col-md-3 offset-2">
+			<p>名前:<%= reservation.user.name %>様</p>
+			<p>フリガナ:<%= reservation.user.kana_name %></p>
+			<p>電話番号:<%= reservation.user.phone_number %></p>
+			<p>予約サロン名:<%= reservation.salon.salon_name %></p>
 			<p>予約時間:<%= reservation.date %></p>
 		</td>
 	</tr>
