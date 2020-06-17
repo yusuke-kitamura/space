@@ -2,7 +2,7 @@
 
 <%= form_with model: @salon, url: {controller: 'owner/salons', action: 'update'}, local: true do |f| %>
  	<div class = "row">
- 	<%= attachment_image_tag @salon, :salon_image, format: 'jpg', class: "col-md-3 offset-4"%>
+ 	<%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400", class: "col-md-3 offset-4"%>
  	<%= f.attachment_field :salon_image %>
  	</div><br>
 
@@ -24,6 +24,11 @@
  	<div class = "row">
 		<%= f.label :address, "住所", class: "col-md-1 offset-3"  %>
 		<%= f.text_field :address, class: "col-md-5"  %>
+	</div><br>
+
+	<div class = "row">
+		<%= f.label :station, "最寄駅", class: "col-md-1 offset-3"  %>
+		<%= f.text_field :station, class: "col-md-5"  %>
 	</div><br>
 
  	<div class = "row">

@@ -1,26 +1,19 @@
-<h2>掲載中のサロン詳細</h2>
+<div class = "row">
+  <h1 class = "offset-3">掲載中のサロン詳細</h1>
+</div>
 
 <table>
-  	<tr>
-  		<td><%= attachment_image_tag @salon, :salon_image, format: 'jpg' %></td>
-  	</tr>
+  <div class = "row">
+  	 <div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
-	<tr>
-		<td><%= @salon.salon_name %></td>
-	</tr>
-
-	<tr>
-		<td>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></td>
-	</tr>
-
-	<tr>
-		<td>値段:<%= @salon.price %></td>
-	</tr>
-
-	<tr>
-		<td>その他:<%= @salon.explanation %></td>
-	</tr>
-</table>
+     <div class = "col-md-4 offset-1">
+		 <strong><%= @salon.salon_name %></strong>
+		 <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p>
+		 <p>値段:<%= @salon.price %></p>
+		 <p>その他:<%= @salon.explanation %></p>
+    </div>
+	 </div>
+</table><br>
 
 <!-- map表示ここから -->
 <div id='map' class="<%= @salon.address %>"></div>
@@ -28,6 +21,7 @@
 #map{
   height: 600px;
   width: 50%;
+  margin-left: 450px;
 }
 </style>
 
@@ -68,8 +62,10 @@ function codeAddress(){
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4-e6C4U9nNBgu0hPvMkoB4SoRqDaRrI&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK4-e6C4U9nNBgu0hPvMkoB4SoRqDaRrI&callback=initMap" async defer></script><br>
 <!-- map表示ここまで -->
 
-<%= link_to "一覧へ戻る", owner_salons_path %>
-<%= link_to "編集する", edit_owner_salon_path(@salon) %>
+<div class = "row">
+  <%= link_to "一覧へ戻る", owner_salons_path, class: "btn btn-info col-md-2 offset-3" %>
+  <%= link_to "編集する", edit_owner_salon_path(@salon), class: "btn btn-info col-md-2 offset-1" %>
+</div>

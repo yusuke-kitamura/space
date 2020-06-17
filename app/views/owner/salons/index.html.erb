@@ -1,56 +1,61 @@
-<h2>サロンを掲載する</h2>
+<div class = "row">
+	<h1 class = "offset-2">サロンを掲載する</h1>
+</div>
+
 <%= form_with model: @salon, url: {controller: 'owner/salons', action: 'create'}, lacal: true do |f| %>
 	<div class = "row">
-		<%= f.attachment_field :salon_image, class: "col-md-4 offset-1" %>
+		<%= f.attachment_field :salon_image, class: "offset-2" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :salon_name, "サロン名", class: "col-md-2 offset-1" %>
-		<%= f.text_field :salon_name, class: "col-md-2" %>
+		<%= f.label :salon_name, "サロン名", class: "col-md-1 offset-2" %>
+		<%= f.text_field :salon_name, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :postal_code, "郵便番号", class: "col-md-2 offset-1" %>
-		<%= f.text_field :postal_code, class: "col-md-2" %>
+		<%= f.label :postal_code, "郵便番号", class: "col-md-1 offset-2" %>
+		<%= f.text_field :postal_code, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :prefecture_code, "都道府県", class: "col-md-2 offset-1" %>
-		<%= f.select :prefecture_code, options_for_select(Salon.prefecture_codes), {}, class: 'col-md-1' %>
+		<%= f.label :prefecture_code, "都道府県", class: "col-md-1 offset-2" %>
+		<%= f.select :prefecture_code, options_for_select(Salon.prefecture_codes), {}, class: 'col-md-4' %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :address, "市町村", class: "col-md-2 offset-1"%>
-		<%= f.text_field :address, class: "col-md-2" %>
+		<%= f.label :address, "市町村", class: "col-md-1 offset-2"%>
+		<%= f.text_field :address, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :station, "最寄り駅", class: "col-md-2 offset-1"%>
-		<%= f.text_field :station, class: "col-md-2" %>
+		<%= f.label :station, "最寄り駅", class: "col-md-1 offset-2" %>
+		<%= f.text_field :station, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :seat_number, "貸出可能席数", class: "col-md-2 offset-1" %>
-		<%= f.text_field :seat_number, class: "col-md-2" %>
+		<%= f.label :seat_number, "貸出可能席数", class: "col-md-1 offset-2" %>
+		<%= f.text_field :seat_number, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :price, "価格(1ヶ月)", class: "col-md-2 offset-1" %>
-		<%= f.text_field :price, class: "col-md-2" %>
+		<%= f.label :price, "価格(1ヶ月)", class: "col-md-1 offset-2" %>
+		<%= f.text_field :price, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-		<%= f.label :explanation, "その他詳細", class: "col-md-2 offset-1" %>
-		<%= f.text_area :explanation, class: "col-md-2" %>
+		<%= f.label :explanation, "その他詳細", class: "col-md-1 offset-2" %>
+		<%= f.text_area :explanation, class: "col-md-4" %>
 	</div><br>
 
 	<div class = "row">
-	<%= f.submit "掲載する", class: "btn btn-info col-md-2 offset-3" %>
+	<%= f.submit "掲載する", class: "btn btn-info col-md-2 offset-4" %>
 	</div><br>
 
 <% end %>
 
-<h2>掲載中のサロン一覧</h2>
+<div class = "row">
+	<h1 class = "offset-2">掲載中のサロン一覧</h1>
+</div>
 
 <table class="table table-striped">
   <% @salons.each do |salon| %>
