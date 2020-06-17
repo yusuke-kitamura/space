@@ -18,7 +18,7 @@
         <%= image_tag 'logo7.jpg', size: '210x140' %>
         <% if user_signed_in? %>
         <ul class = "nav p-4">
-        <li class = "nav-item mr-3"><%= link_to "サロン検索", "#", class: "btn btn-outline-secondary" %></li>
+        <li class = "nav-item mr-3"><%= link_to "サロン検索", user_salons_path, class: "btn btn-outline-secondary" %></li>
         <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-outline-secondary" %></li>
         <li class = "nav-item mr-3"><%= link_to "お気に入り", user_favorites_path, class: "btn btn-outline-secondary" %></li>
         <li class = "nav-item mr-3"><%= link_to "予約一覧", user_reservations_path, class: "btn btn-outline-secondary" %></li>
