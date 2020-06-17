@@ -21,15 +21,15 @@
   	<tr class = "row">
   		<td class = "col-md-2 offset-2"><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400" %></td>
   	
-		<td class = "col-md-3 offset-2">
-			<strong><%=link_to salon.salon_name, user_salon_path(salon) %></strong></br><br>
-			<p>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p>
-			<p>最寄り駅:<%= salon.station %></p>
-			<p>値段(月極):<%= salon.price %></p>
-			<p>貸出座席数:<%= salon.seat_number %></p>
-			<p>その他:<%= salon.explanation %></p>
-		</td>
-	</tr>
+		  <td class = "col-md-3 offset-2">
+			 <h5><%=link_to salon.salon_name, user_salon_path(salon) %></h5></br>
+			 <p>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p>
+			 <p>最寄り駅:<%= salon.station %></p>
+			 <p>値段(月極):<%= salon.price %></p>
+			 <p>貸出座席数:<%= salon.seat_number %></p>
+			 <p>その他:<%= salon.explanation %></p>
+		  </td>
+	 </tr>
 
   <% end %>
 </table>
