@@ -1,7 +1,7 @@
 class User::SalonsController < ApplicationController
 	def index
     	@q = Salon.ransack(params[:q])
-    	@salons = @q.result(distinct: true)
+    	@salons = @q.result(distinct: true).page(params[:page]).reverse_order.per(2)
 	end
 
 	def show

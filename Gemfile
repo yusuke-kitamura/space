@@ -77,6 +77,7 @@ gem 'bootstrap4-datetime-picker-rails'
 
 gem 'pry-byebug'
 
+# ページング用
 gem 'kaminari','~> 1.2.1'
 
 # 検索用
