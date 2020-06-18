@@ -6,6 +6,7 @@
 <%= search_form_for @q, url: user_salons_path do |f| %>
   <tr class ="row">
     <%= f.label :prefecture_code, "エリア", class: "col-md-2 offset-2" %>
+    <!-- last=都道府県　first=id -->
     <%= f.collection_select(:prefecture_code_eq, Salon.prefecture_codes, :last,:first, class: "col-md-2") %><br>
 
     

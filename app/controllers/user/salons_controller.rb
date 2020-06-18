@@ -1,7 +1,6 @@
 class User::SalonsController < ApplicationController
 	def index
     	@q = Salon.ransack(params[:q])
-    	p @q
     	@salons = @q.result(distinct: true)
 	end
 

@@ -73,8 +73,6 @@ gem "refile-mini_magick"
 
 gem 'font-awesome-rails'
 
-# JavaScriptの日付や時刻などを扱いやすくするためのライブラリ
-gem 'momentjs-rails'
 gem 'bootstrap4-datetime-picker-rails'
 
 gem 'pry-byebug'

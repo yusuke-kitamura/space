@@ -15,7 +15,7 @@
     </div>
 	</div><br>
 
-  <!-- 予約済みの場合、予約フォームは出さないように分岐 -->
+  <!-- 予約済みの場合、予約フォームは出さないように分岐。過去の日付で予約できないようにしたい -->
 <% if !Reservation.exists?(user_id:current_user.id,salon_id:@salon.id) %>
   <%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
     <%= f.hidden_field :salon_id, value: @salon.id %>
@@ -30,7 +30,9 @@
         <%= f.submit "見学予約", class: "btn btn-info col-md-3 offset-3" %>
       </div><br>
   <% end %>
+
 <% else %>
+
       <div class = "row">
         <div class = "btn btn-danger col-md-3 offset-3">見学または予約済み</div>
       </div><br>
