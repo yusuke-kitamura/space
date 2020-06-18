@@ -6,12 +6,12 @@
     <div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
     <div class = "col-md-4 offset-2">
-		  <strong><%= @salon.salon_name %></strong>
-      <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p>
-      <p>最寄駅:<%= @salon.station %></p>
-      <p>値段:<%= @salon.price %></p>
-      <p>貸出座席数:<%= @salon.seat_number %></p>
-      <p>その他:<%= @salon.explanation %></p>
+		  <h3><%= @salon.salon_name %></h3>
+      <h5>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></h5>
+      <h5>最寄駅:<%= @salon.station %></h5>
+      <p>値段:<%= @salon.price %><br>
+      貸出座席数:<%= @salon.seat_number %><br>
+      その他:<%= @salon.explanation %></p>
     </div>
 	</div><br>
 

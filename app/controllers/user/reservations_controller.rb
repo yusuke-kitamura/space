@@ -10,7 +10,8 @@ class User::ReservationsController < ApplicationController
 	end
 
 	def index
-		@reservations = Reservation.all
+		@reservations = Reservation.where('date >= ?', Date.today)
+		# 今日以降の日付の予約のみを取得
 	end
 
 	private
