@@ -14,6 +14,10 @@ class User::ReservationsController < ApplicationController
 		# 今日以降の日付の予約のみを取得
 	end
 
+	def past_index
+		@reservations = Reservation.where('date <= ?', Date.today)
+	end
+
 	private
 	def reservation_params
 		params.require(:reservation).permit(:salon_id, :user_id, :date)
