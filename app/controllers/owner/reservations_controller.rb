@@ -1,5 +1,5 @@
 class Owner::ReservationsController < ApplicationController
 	def index
-		@reservations = Reservation.all
+		@reservations = Reservation.where('date >= ?', Date.today)
 	end
 end

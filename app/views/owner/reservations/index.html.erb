@@ -7,6 +7,12 @@
 </div>
 
 <table class="table table-striped">
+	<% if @reservations.blank? %>
+		<div class = "row">
+			<div class = "offset-4">現在予約はありません。</div>
+		</div>
+	<% end %>
+	
 <% @reservations.each do |reservation| %>
 	<tr class = "row">
 		<td class = "col-md-3 offset-2">
