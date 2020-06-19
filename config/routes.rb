@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   namespace :owner do # urlの頭にowner/を付与
     get 'reservations' => 'reservations#index'
+    get 'reservations/past' => 'reservations#past_index'
   	resource :owners, only: [:show, :edit, :update, :destroy]
   	resources :salons
   end

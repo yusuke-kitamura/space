@@ -1,0 +1,23 @@
+<div class = "row">
+	<h1 class = "offset-2">過去の予約者様情報</h1><br>
+</div>
+
+<table class="table table-striped">
+	<% if @reservations.blank? %>
+		<div class = "row">
+			<div class = "offset-4">過去の予約はありません。</div>
+		</div>
+	<% end %>
+	
+<% @reservations.each do |reservation| %>
+	<tr class = "row">
+		<td class = "col-md-3 offset-2">
+			<p>名前:<%= reservation.user.name %>様</p>
+			<p>フリガナ:<%= reservation.user.kana_name %></p>
+			<p>電話番号:<%= reservation.user.phone_number %></p>
+			<p>予約サロン名:<%= reservation.salon.salon_name %></p>
+			<p>予約時間:<%= reservation.date %></p>
+		</td>
+	</tr>
+<% end %>
+</table>
