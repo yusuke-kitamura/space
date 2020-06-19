@@ -30,10 +30,27 @@
  	margin-right: 300px;
  }
 
+ .nav{
+ 	margin-right: 10%;
+ }
+
  legend{
  	width: 5%;
  	margin-left: 1px;
  }
+
+ .btn-flat-double-border {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+  border: double 4px black;
+  border-radius: 3px;
+  transition: .4s;
+}
+.btn-flat-double-border:hover {
+  background: #fffbef;
+}
 
 
 

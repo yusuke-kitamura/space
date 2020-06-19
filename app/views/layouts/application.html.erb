@@ -15,32 +15,32 @@
     <header class = "nav-var">
       <div class = "container">
       <nav class = "navbar nav w-100">
-        <%= image_tag 'logo7.jpg', size: '210x140', class: "top-logo" %>
+        <%= image_tag 'logo7.jpg', size: '220x120', class: "top-logo" %>
         <% if user_signed_in? %>
           <ul class = "nav p-4">
-            <li class = "nav-item mr-3"><%= link_to "サロン検索", user_salons_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "お気に入り", user_favorites_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "予約一覧", user_reservations_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %></li>
+            <li class = "nav-item mr-2"><%= link_to "サロン検索", user_salons_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "お気に入りサロン", user_favorites_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "予約サロン一覧", user_reservations_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-flat-double-border" %></li>
           </ul>
 
         <% elsif owner_signed_in? %>
           <ul class = "nav p-4">
-            <li class = "nav-item mr-3"><%= link_to "掲載中サロン", owner_salons_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_owner_owners_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "予約一覧", owner_reservations_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "過去の予約", owner_reservations_past_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "btn btn-outline-secondary"  %></li>
+            <li class = "nav-item mr-3"><%= link_to "掲載中サロン", owner_salons_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_owner_owners_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-3"><%= link_to "予約サロン一覧", owner_reservations_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-3"><%= link_to "過去の予約サロン", owner_reservations_past_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "btn btn-flat-double-border"  %></li>
           </ul>
 
         <% else %>
           <ul class = "nav p-4">
-            <li class = "nav-item mr-3"><%= link_to "SPACEとは?", about_path, class: "btn btn-outline-secondary"  %></li>
-            <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_owner_session_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "スタイリスト登録", new_user_registration_path, class: "btn btn-outline-secondary" %></li>
-            <li class = "nav-item mr-3"><%= link_to "オーナー登録", new_owner_registration_path, class: "btn btn-outline-secondary" %></li>
+            <li class = "nav-item mr-2"><%= link_to "SPACEとは?", about_path, class: "btn btn-flat-double-border"  %></li>
+            <li class = "nav-item mr-2"><%= link_to "スタイリストログイン", new_user_session_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "オーナーログイン", new_owner_session_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "スタイリスト登録", new_user_registration_path, class: "btn btn-flat-double-border" %></li>
+            <li class = "nav-item mr-2"><%= link_to "オーナー登録", new_owner_registration_path, class: "btn btn-flat-double-border" %></li>
           </ul>
         <% end %>
       </nav>
