@@ -2,26 +2,27 @@
 	<h1 class = "offset-2">予約サロン一覧</h1>
 </div>
 
-<table class="table table-striped">
-	<% if @reservations.blank? %>
-		<div class = "row">
-			<div class = "offset-4">現在予約はありません。</div>
-		</div>
-	<% end %>
-
-<% @reservations.each do |reservation| %>
-	<tr class = "row">
-  		<td class = "col-md-2 offset-2"><%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', size: "400x400" %></td>
-  	
-		<td class = "col-md-3 offset-2">
-			<strong><%= link_to reservation.salon.salon_name, user_salon_path(reservation.salon) %></strong>
-			<p>住所:〒<%= reservation.salon.postal_code %><%= reservation.salon.prefecture_code %><%= reservation.salon.address %></p>
-			<p>最寄り駅:<%= reservation.salon.station %></p>
-			<p>値段:<%= reservation.salon.price %></p>
-			<p>貸出座席数:<%= reservation.salon.seat_number %></p>
-			<p>その他:<%= reservation.salon.explanation %></p>
-			<p>予約時間:<%= reservation.date %></p>
-		</td>
-	</tr>
+<% if @reservations.blank? %>
+	<div class = "row">
+		<div class = "offset-4">現在予約はありません。</div>
+	</div>
 <% end %>
-</table>
+
+<div class="row row-cols-1 row-cols-md-3">
+  <% @reservations.each do |reservation| %>
+      <div class="card">
+        <%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
+          <div class="card-body offset-2">
+            <h3 class="card-title"><%= link_to reservation.salon.salon_name, user_salon_path(reservation.salon) %></h3>
+            <h5 class="card-text"><i class="fas fa-store"></i>住所:〒<%= reservation.salon.postal_code %><%= reservation.salon.prefecture_code %><%= reservation.salon.address %></h5>
+            <h5><i class="fas fa-train"></i>最寄り駅:<%= reservation.salon.station %></h5>
+            <p>値段(月極):<%= reservation.salon.price %><br>
+               貸出座席数:<%= reservation.salon.seat_number %><br>
+               その他:<%= reservation.salon.explanation %><br>
+           	   予約時間:<%= reservation.date %></p>
+          </div>
+      </div>
+  <% end %>
+</div>
+
+
