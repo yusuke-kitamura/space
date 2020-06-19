@@ -10,7 +10,7 @@
 
 <div class="row row-cols-1 row-cols-md-3">
   <% @reservations.each do |reservation| %>
-      <div class="card">
+      <div class="card border-dark">
         <%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
           <div class="card-body offset-2">
             <h3 class="card-title"><%= link_to reservation.salon.salon_name, user_salon_path(reservation.salon) %></h3>

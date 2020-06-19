@@ -12,16 +12,14 @@
 			<div class = "offset-4">現在予約はありません。</div>
 		</div>
 	<% end %>
-	
-<% @reservations.each do |reservation| %>
-	<tr class = "row">
-		<td class = "col-md-3 offset-2">
-			<p>名前:<%= reservation.user.name %>様</p>
-			<p>フリガナ:<%= reservation.user.kana_name %></p>
-			<p>電話番号:<%= reservation.user.phone_number %></p>
-			<p>予約サロン名:<%= reservation.salon.salon_name %></p>
-			<p>予約時間:<%= reservation.date %></p>
-		</td>
-	</tr>
-<% end %>
-</table>
+
+<div class="row row-cols-1 row-cols-md-4">
+  <% @reservations.each do |reservation| %>
+      <div class="card border-dark">
+          <div class="card-body offset-3">
+            <h5 class="card-title">名前:<%= reservation.user.name %>様</h5>
+            	<div class="card-text">フリガナ:<%= reservation.user.kana_name %><br>電話番号:<%= reservation.user.phone_number %><br>予約サロン名:<%= reservation.salon.salon_name %><br>予約時間:<%= reservation.date %></div>
+          </div>
+      </div>
+  <% end %>
+</div>
