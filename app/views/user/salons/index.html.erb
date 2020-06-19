@@ -3,6 +3,7 @@
 </dic>
 
 <!-- 検索フォーム -->
+<!-- <div style="width: 70%; padding: 10px; margin-bottom: 15px; margin-left: 95px; border: 7px double #C0C0C0; border-radius: 15px; "> -->
 <%= search_form_for @q, url: user_salons_path do |f| %>
   <tr class ="row">
     <%= f.label :prefecture_code, "エリア", class: "col-md-2 offset-2" %>
@@ -16,28 +17,29 @@
     <%= f.submit "絞り込み", class: "col-md-2 offset-4 btn btn-info" %>
   </tr>
 <% end %><br>
+</div>
 
-<table class="table table-striped">
+<div class="row row-cols-1 row-cols-md-3">
   <% @salons.each do |salon| %>
-  	<tr class = "row">
-  		<td class = "col-md-2 offset-2"><%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400" %></td>
-  	
-		  <td class = "col-md-3 offset-2">
-			 <h3><%=link_to salon.salon_name, user_salon_path(salon) %></h3></br>
-			 <h5><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></h5>
-			 <h5><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></h5>
-			 <p>値段(月極):<%= salon.price %><br>
-			 貸出座席数:<%= salon.seat_number %><br>
-			 その他:<%= salon.explanation %></p>
-		  </td>
-	 </tr>
-
+      <div class="card">
+        <%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
+          <div class="card-body offset-2">
+            <h3 class="card-title"><%=link_to salon.salon_name, user_salon_path(salon) %></h3>
+            <h5 class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></h5>
+            <h5><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></h5>
+            <p>値段(月極):<%= salon.price %><br>
+               貸出座席数:<%= salon.seat_number %><br>
+               その他:<%= salon.explanation %></p></p>
+          </div>
+      </div>
   <% end %>
-</table>
+</div>
 
 <div class = "paginate">
   <div class = "offset-5">
     <%= paginate @salons %>
   </div>
-</div>
+<!-- </div> -->
+
+
 
