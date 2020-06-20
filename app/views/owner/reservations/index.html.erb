@@ -6,12 +6,11 @@
 	<p class = "offset-2">記載の電話番号にご連絡いただき、予約時間の確認及び予約確定のご連絡をお願いいたします。</p>
 </div>
 
-<table class="table table-striped">
-	<% if @reservations.blank? %>
-		<div class = "row">
-			<div class = "offset-4">現在予約はありません。</div>
-		</div>
-	<% end %>
+<% if @reservations.blank? %>
+	<div class = "row">
+		<div class = "offset-4">現在予約はありません。</div>
+	</div>
+<% end %>
 
 <div class="row row-cols-1 row-cols-md-4">
   <% @reservations.each do |reservation| %>

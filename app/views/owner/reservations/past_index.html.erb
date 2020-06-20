@@ -2,12 +2,11 @@
 	<h1 class = "offset-2">過去の予約者様情報</h1><br>
 </div>
 
-<table class="table table-striped">
-	<% if @reservations.blank? %>
-		<div class = "row">
-			<div class = "offset-4">過去の予約はありません。</div>
-		</div>
-	<% end %>
+<% if @reservations.blank? %>
+	<div class = "row">
+		<div class = "offset-4">過去の予約はありません。</div>
+	</div>
+<% end %>
 	
 <div class="row row-cols-1 row-cols-md-4">
   <% @reservations.each do |reservation| %>

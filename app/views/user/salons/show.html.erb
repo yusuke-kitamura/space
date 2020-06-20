@@ -27,7 +27,7 @@
       </div><br>
 
       <div class = "row-action">
-        <%= f.submit "見学予約", class: "btn btn-info col-md-3 offset-3" %>
+        <%= f.submit "見学予約", class: "btn btn-flat-double-border col-md-3 offset-3" %>
       </div><br>
   <% end %>
 
@@ -90,13 +90,17 @@ function codeAddress(){
 
 <!-- お気に入り有無によって表示ボタンを分岐 -->
 <div class = "row">
-  <% if !Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
-    <%= link_to "お気に入りへ登録", user_salon_favorites_path(@salon), method: :post, class: "btn btn-info col-md-2 offset-3" %>
-  <% else %>
-    <%= link_to "お気に入り解除", user_salon_favorite_path(@salon), method: :delete,class: "btn btn-danger col-md-2 offset-3" %>
-  <% end %>
+  <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-flat-double-border col-md-2 offset-3" %>
 
-  <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-info col-md-2 offset-1" %>
+  <% if !Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
+    <%= link_to user_salon_favorites_path(@salon), method: :post, class: "btn-flat-double-border col-md-2 offset-1" do %>
+      <i class="far fa-heart heart_red fa-lg offset-5" style="color: red;"></i>
+    <% end %>
+  <% else %>
+    <%= link_to user_salon_favorite_path(@salon), method: :delete, class: "btn-flat-double-border col-md-2 offset-1" do %>
+      <i class="fas fa-heart heart_red fa-lg offset-5" style="color: red;"></i>
+    <% end %>
+  <% end %>
 </div>
 
 
