@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :owners
-  devise_for :users
+  devise_for :owners, controllers: {   
+  registrations: 'owners/registrations',
+  sessions: 'owners/sessions' }
+
+  devise_for :users, controllers: {   
+  registrations: 'users/registrations',
+  sessions: 'users/sessions' }
 
   namespace :user do # urlの頭にuser/を付与
     get 'favorites' => 'favorites#index'

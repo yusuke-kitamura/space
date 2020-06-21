@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
-
+  
 	protected
 
 	# ログイン後、ログアウト後のパスを指定
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
    			devise_parameter_sanitizer.permit(:sign_in,keys:[:email])
    			devise_parameter_sanitizer.permit(:account_update,keys:[:name,:kana_name,:email,:phone_number])
 		elsif resource_class == Owner
-			devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email])
+			  devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email])
    			devise_parameter_sanitizer.permit(:sign_in,keys:[:email])
    			devise_parameter_sanitizer.permit(:account_update,keys:[:name,:email])
     	else
