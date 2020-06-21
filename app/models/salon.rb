@@ -1,7 +1,11 @@
 class Salon < ApplicationRecord
+    belongs_to :owner
+    
 	has_many :reservations, dependent: :destroy
 	has_many :favorites, dependent: :destroy
     has_many :users, through: :favorites
+
+    validates :owner_id, presence: true
 
 	attachment :salon_image
 

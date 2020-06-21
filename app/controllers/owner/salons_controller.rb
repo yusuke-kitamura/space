@@ -1,6 +1,6 @@
 class Owner::SalonsController < ApplicationController
 	def index
-		@salons = Salon.all
+		@salons = current_owner.salons.all
 		@salon = Salon.new
 	end
 
@@ -30,6 +30,6 @@ class Owner::SalonsController < ApplicationController
 	# prefecture_codeをintへ変換
 	private
 	def salon_params
-		params.require(:salon).permit(:salon_name, :salon_image, :explanation, :postal_code, :address, :price, :seat_number, :prefecture_code, :station).merge(prefecture_code: params[:salon][:prefecture_code].to_i)
+		params.require(:salon).permit(:salon_name, :salon_image, :explanation, :postal_code, :address, :price, :seat_number, :prefecture_code, :station, :owner_id).merge(prefecture_code: params[:salon][:prefecture_code].to_i)
 	end
 end

@@ -3,7 +3,7 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-3">
-  <% @user.salons.each do |salon| %>
+  <% @salons.each do |salon| %>
       <div class="card border-dark">
         <%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
           <div class="card-body offset-2">
