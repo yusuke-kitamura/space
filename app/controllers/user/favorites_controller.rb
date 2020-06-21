@@ -7,7 +7,7 @@ class User::FavoritesController < ApplicationController
 	end
 
 	def index
-		@user = current_user
+		@salons = current_user.salons.all
 	end
 
 	def destroy
