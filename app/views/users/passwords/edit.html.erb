@@ -1,25 +1,26 @@
-<h2>Change your password</h2>
+<div class = "row">
+  <h2 class = "offset-5">パスワードを変更する</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
+  <div class="row">
+    <%= f.label :password, "新しいパスワード", class: "offset-4" %><br />
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "col-md-4 offset-4" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <div class="row">
+    <%= f.label :password_confirmation, "パスワード確認用", class: "offset-4" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-md-4 offset-4" %>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%= f.submit "パスワードを変更する", class: "btn btn-flat-double-border col-md-4 offset-4" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
