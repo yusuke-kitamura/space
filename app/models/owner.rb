@@ -1,7 +1,7 @@
 class Owner < ApplicationRecord
 	
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :salons, dependent: :destroy
 
