@@ -5,7 +5,10 @@ class Salon < ApplicationRecord
 	has_many :favorites, dependent: :destroy
     has_many :users, through: :favorites
 
-    validates :owner_id, presence: true
+    validates :salon_name, presence: true
+    validates :prefecture_code, presence: true
+    validates :address, presence: true
+    validates :price, presence: true
 
 	attachment :salon_image
 
