@@ -1,9 +1,9 @@
 <% if salon.favorited_by?(current_user) %>
-<%= link_to user_salon_favorites_path(salon), method: :delete, remote: true, class: "btn-flat-double-border col-md-2 offset-1" do %>
-      <i class="fas fa-heart heart_red fa-lg offset-5" ></i>
+<%= link_to user_salon_favorites_path(salon), method: :delete, remote: true do %>
+      <i class="fas fa-heart heart_red fa-lg" style="color: red;" ></i>
     <% end %>
    <% else %>  
-    <%= link_to user_salon_favorites_path(salon), method: :post, remote: true, class: "btn-flat-double-border col-md-2 offset-1" do %>
-      <i class="far fa-heart heart_red fa-lg offset-5" style="color: red;"></i>
+    <%= link_to user_salon_favorites_path(salon), method: :post, remote: true do %>
+      <i class="far fa-heart heart_red fa-lg" style="color: red;"></i>
     <% end %>
 <% end %>
