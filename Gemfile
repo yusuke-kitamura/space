@@ -90,4 +90,7 @@ end
 
 gem 'enum_help'
 
+# 日本語へ変換するため
+gem 'rails-i18n', '~> 5.1'
+
 
