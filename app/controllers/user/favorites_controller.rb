@@ -1,9 +1,8 @@
 class User::FavoritesController < ApplicationController
 	def create
-		user = current_user
-		salon = Salon.find(params[:salon_id])
-		Favorite.create(user_id: user.id, salon_id: salon.id)
-		redirect_back(fallback_location: root_path)
+		@salon = Salon.find(params[:salon_id])
+		@favorite = @salon.favorites.new(user_id: current_user.id)
+    	@favorite.save!
 	end
 
 	def index
@@ -11,10 +10,13 @@ class User::FavoritesController < ApplicationController
 	end
 
 	def destroy
-		user = current_user
-		salon = Salon.find(params[:salon_id])
-		@favorite = Favorite.find_by(user_id: user.id, salon_id: salon.id)
-		@favorite.destroy
-		redirect_back(fallback_location: root_path)
+		@salon = Salon.find(params[:salon_id])
+		@favorite = Favorite.find_by(user_id: current_user.id, salon_id: @salon.id)
+		@favorite.destroy!
+	end
+
+	private
+	def salon_params
+		params.require(:favorite).permit(:salon_id, :user_id)
 	end
 end

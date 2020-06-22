@@ -92,15 +92,9 @@ function codeAddress(){
 <div class = "row">
   <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-flat-double-border col-md-2 offset-3" %>
 
-  <% if !Favorite.exists?(user_id:current_user.id,salon_id:@salon.id) %>
-    <%= link_to user_salon_favorites_path(@salon), method: :post, class: "btn-flat-double-border col-md-2 offset-1" do %>
-      <i class="far fa-heart heart_red fa-lg offset-5" style="color: red;"></i>
-    <% end %>
-  <% else %>
-    <%= link_to user_salon_favorite_path(@salon), method: :delete, class: "btn-flat-double-border col-md-2 offset-1" do %>
-      <i class="fas fa-heart heart_red fa-lg offset-5" style="color: red;"></i>
-    <% end %>
-  <% end %>
+  <div id="favorites_buttons_<%= @salon.id %>">
+    <%= render 'user/favorites/favorite', salon: @salon %>
+  </div>
 </div>
 
 
