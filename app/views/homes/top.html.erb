@@ -14,7 +14,7 @@
         <%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
           <div class="card-body offset-2">
             <h3 class="card-title"><%= salon.salon_name %></h3>
-            <h5 class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></h5>
+            <h5 class="card-text"><i class="fas fa-store"></i>住所:<%= salon.prefecture_code %><%= salon.address %></h5>
             <h5><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></h5>
           </div>
       </div>

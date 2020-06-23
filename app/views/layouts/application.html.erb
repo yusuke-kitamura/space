@@ -48,7 +48,7 @@
       </nav>
       <!-- </div> -->
     </header>
-    
+
     <% if flash[:notice] %>
       <p class="notice"><%= notice %></p>
     <% end %>
@@ -56,6 +56,10 @@
     <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
     <% end %>
+
+    <div class = "img-top">
+      <%= image_tag 'salon3.jpg', size: '1840x1000' %>
+    </div>
 
     <%= yield %>
 
