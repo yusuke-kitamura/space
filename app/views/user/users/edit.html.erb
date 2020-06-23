@@ -1,11 +1,5 @@
-<% if flash[:notice] %>
-	<div class="flash">
-		<%= flash[:notice] %>
-	</div>
-<% end %>
-
 <div class = "row">
-<h2 class = "col-md-3 offset-2"><%= current_user.name %>さんのアカウント情報</h2>
+	<h2 class = "col-md-4 offset-4"><%= current_user.name %>さんのアカウント情報</h2>
 </div>
 
 <%= form_with model: @user, url: {controller: 'user/users', action: 'update' },lacal: true do |f| %>

@@ -3,7 +3,7 @@ class User::ReservationsController < ApplicationController
 		@reservation = Reservation.new(reservation_params)
 		@reservation.user_id = current_user.id
 		@reservation.save
-		redirect_back(fallback_location: root_path)
+		redirect_to user_reservations_path, notice: "予約完了しました。"
 	end
 
 	def destroy

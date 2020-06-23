@@ -7,7 +7,7 @@ class Owner::SalonsController < ApplicationController
 	def create
 		@salon = Salon.new(salon_params)
 		@salon.save!
-		redirect_to owner_salons_path
+		redirect_to owner_salons_path, notice: "サロンを投稿しました"
 	end
 
 	def show
