@@ -2,8 +2,6 @@
 	<h1 class = "offset-5">サロンを掲載する</h1>
 </div>
 
-<%= render 'layouts/error_messages', obj: @salon %>
-
 <%= form_with model: @salon, url: {controller: 'owner/salons', action: 'create'}, local: true do |f| %>
 
 

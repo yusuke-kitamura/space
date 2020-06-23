@@ -35,6 +35,9 @@ ja:
     models:
       user: ユーザー
       owner: ユーザー
+      salon: サロン
+      reservation: 予約
+      favorite: お気に入り
   devise:
     confirmations:
       confirmed: アカウントを登録しました。

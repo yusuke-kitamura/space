@@ -68,6 +68,6 @@ function codeAddress(){
 <!-- map表示ここまで -->
 
 <div class = "row">
-  <%= link_to "一覧へ戻る", owner_salons_path, class: "btn btn-flat-double-border col-md-2 offset-3" %>
-  <%= link_to "編集する", edit_owner_salon_path(@salon), class: "btn btn-flat-double-border col-md-2 offset-1" %>
+  <%= link_to "編集する", edit_owner_salon_path(@salon), class: "btn btn-flat-double-border col-md-2 offset-3" %>
+  <%= link_to "削除する", owner_salon_path(@salon), method: :delete, data: {confirm: "本当にその時間でよろしいですか？"}, class: "btn btn-flat-double-border col-md-2 offset-1" %>
 </div>

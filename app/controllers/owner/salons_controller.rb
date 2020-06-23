@@ -28,6 +28,9 @@ class Owner::SalonsController < ApplicationController
 	end
 
 	def destroy
+		@salon = Salon.find(params[:id])
+		@salon.destroy
+		redirect_to owner_salons_path, notice: "サロンを削除しました"
 	end
 
 	# prefecture_codeをintへ変換
