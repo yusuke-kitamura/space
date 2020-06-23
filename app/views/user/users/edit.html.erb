@@ -2,7 +2,7 @@
 	<h2 class = "col-md-4 offset-4"><%= current_user.name %>さんのアカウント情報</h2>
 </div>
 
-<%= form_with model: @user, url: {controller: 'user/users', action: 'update' },lacal: true do |f| %>
+<%= form_with model: @user, url: {controller: 'user/users', action: 'update' },local: true do |f| %>
 	<div class = "row">
     <label class = "col-md-1 offset-2"><%= f.label :name, "名前" %></label>
     <%= f.text_field :name, class: "col-md-6" %>

@@ -6,8 +6,11 @@ class Owner::SalonsController < ApplicationController
 
 	def create
 		@salon = Salon.new(salon_params)
-		@salon.save!
-		redirect_to owner_salons_path, notice: "サロンを投稿しました"
+		if @salon.save
+			redirect_to owner_salons_path, notice: "サロンを投稿しました"
+		else
+			redirect_to owner_salons_path, alert: "空欄がありますので、再度入力してください"
+		end
 	end
 
 	def show

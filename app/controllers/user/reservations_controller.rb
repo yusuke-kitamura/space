@@ -2,8 +2,12 @@ class User::ReservationsController < ApplicationController
 	def create
 		@reservation = Reservation.new(reservation_params)
 		@reservation.user_id = current_user.id
-		@reservation.save
-		redirect_to user_reservations_path, notice: "予約完了しました。"
+		if @reservation.save
+			redirect_to user_reservations_path, notice: "予約完了しました。"
+		else 
+			@salon = Salon.find(params[:salon_id])
+			redirect_to user_salon_path(@salon), alert: "もう一度やり直してください"
+		end
 	end
 
 	def destroy
