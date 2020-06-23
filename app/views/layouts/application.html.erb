@@ -15,7 +15,9 @@
     <header class = "nav-var">
       <!-- <div class = "container"> -->
       <nav class = "navbar nav w-100">
-        <%= image_tag 'logo7.jpg', size: '220x120', class: "top-logo" %>
+        <%= link_to root_path do %>
+          <%= image_tag 'logo7.jpg', size: '220x120', class: "top-logo" %>
+        <% end %>
         <% if user_signed_in? %>
           <ul class = "nav">
             <li class = "nav-item mr-3"><%= link_to "サロン検索", user_salons_path, class: "btn btn-flat-double-border" %></li>
