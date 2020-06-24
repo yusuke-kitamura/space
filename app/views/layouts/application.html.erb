@@ -4,10 +4,13 @@
     <title>Space</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-     <script src="https://kit.fontawesome.com/61abcfe439.js" crossorigin="anonymous"></script>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script src="https://kit.fontawesome.com/61abcfe439.js" crossorigin="anonymous"></script>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <!-- slick -->
+      <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+      <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> -->
+      <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
   </head>
 
   <body>
@@ -56,10 +59,6 @@
     <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
     <% end %>
-
-    <div class = "img-top">
-      <%= image_tag 'salon3.jpg', size: '1840x1000' %>
-    </div>
 
     <%= yield %>
 

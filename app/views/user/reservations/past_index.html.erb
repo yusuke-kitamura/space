@@ -20,7 +20,7 @@
 			<p>値段:<%= reservation.salon.price %></p>
 			<p>貸出座席数:<%= reservation.salon.seat_number %></p>
 			<p>その他:<%= reservation.salon.explanation %></p>
-			<p>予約時間:<%= reservation.date %></p>
+			<p>予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></p>
 		</td>
 	</tr>
 <% end %>

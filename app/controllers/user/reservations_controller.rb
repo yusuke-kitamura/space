@@ -4,9 +4,13 @@ class User::ReservationsController < ApplicationController
 		@reservation.user_id = current_user.id
 		if @reservation.save
 			redirect_to user_reservations_path, notice: "予約完了しました。"
-		else 
+		elsif @reservation.date < Date.today
+      		@salon = Salon.find(params[:salon_id])
+      		redirect_to user_salon_path(@salon), alert: "過去の日付は選択できません"
+		else
 			@salon = Salon.find(params[:salon_id])
 			redirect_to user_salon_path(@salon), alert: "もう一度やり直してください"
+			
 		end
 	end
 

@@ -20,4 +20,12 @@
 //= require tempusdominus-bootstrap-4.js
 
 
+// $(function() {
+    // $('.img-top').slick({
+        // dots: true,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
+    // });
+// });
+
 

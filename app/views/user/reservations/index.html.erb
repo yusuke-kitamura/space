@@ -19,7 +19,7 @@
             <p>値段(月極):<%= reservation.salon.price %><br>
                貸出座席数:<%= reservation.salon.seat_number %><br>
                その他:<%= reservation.salon.explanation %><br>
-           	   予約時間:<%= reservation.date %></p>
+           	   予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></p>
           </div>
       </div>
   <% end %>
