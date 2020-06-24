@@ -2,8 +2,7 @@ class User::ReservationsController < ApplicationController
 	def create
 		@reservation = Reservation.new(reservation_params)
 		@reservation.user_id = current_user.id
-
-		if  @reservation.date.nil?
+		if @reservation.date.nil?
 			@salon = Salon.find(params[:salon_id])
 			redirect_to user_salon_path(@salon), alert: "もう一度やり直してください"
 		elsif @reservation.date < DateTime.now
