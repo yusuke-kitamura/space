@@ -91,12 +91,12 @@ function codeAddress(){
 <div class = "row">
   <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-flat-double-border col-md-2 offset-2" %>
 
-<!-- ajax -->
-<div class = "btn btn-flat-double-border col-md-2 offset-2">
-  <div id="favorites_buttons_<%= @salon.id %>">
-    <%= render 'user/favorites/favorite', salon: @salon %>
+  <!-- ajax -->
+  <div class = "btn btn-flat-double-border col-md-2 offset-2">
+    <div id="favorites_buttons_<%= @salon.id %>">
+      <%= render 'user/favorites/favorite', salon: @salon %>
+    </div>
   </div>
-</div>
 </div>
 
 
