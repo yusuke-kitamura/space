@@ -12,14 +12,14 @@
         <%= f.collection_select(:prefecture_code_eq, Salon.prefecture_codes, :last,:first, class: "col-md-3") %><br>
 
         <%= f.label :station, "最寄り駅", class: "col-md-1 offset-3" %>
-        <%= f.search_field :station_cont, class: "col-md-3" %><br>
+        <%= f.search_field :station_cont, class: "col-md-3" %><br><br>
 
         <%= f.submit "検索", class: "col-md-3 offset-4 btn btn-flat-double-border" %>
       </tr>
   </fieldset>
 <% end %><br><br>
 
-<div class="row row-cols-1 row-cols-md-3">
+<div class="row row-cols-lg-3 row-cols-xs-1">
   <% @salons.each do |salon| %>
       <div class="card border-dark">
         <%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>

@@ -8,7 +8,7 @@
 	</div>
 <% end %>
 
-<div class="row row-cols-1 row-cols-md-3">
+<div class="row row-cols-lg-3 row-cols-xs-1">
   <% @reservations.each do |reservation| %>
       <div class="card border-dark">
         <%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>

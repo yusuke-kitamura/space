@@ -10,7 +10,7 @@
 	<% end %>
 
 <% @reservations.each do |reservation| %>
-	<tr class = "row">
+	<tr class = "row row-cols-lg-3 row-cols-xs-1">
   		<td class = "col-md-2 offset-2"><%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', size: "400x400" %></td>
   	
 		<td class = "col-md-3 offset-2">
