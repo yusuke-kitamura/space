@@ -4,7 +4,7 @@
 
 <% if @reservations.blank? %>
 	<div class = "row">
-		<div class = "offset-4">現在予約はありません。</div>
+		<div class = "offset-5">現在予約はありません。</div>
 	</div>
 <% end %>
 
@@ -13,12 +13,12 @@
       <div class="card border-dark">
         <%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
           <div class="card-body offset-2">
-            <h3 class="card-title"><%= link_to reservation.salon.salon_name, user_salon_path(reservation.salon) %></h3>
-            <h5 class="card-text"><i class="fas fa-store"></i>住所:〒<%= reservation.salon.postal_code %><%= reservation.salon.prefecture_code %><%= reservation.salon.address %></h5>
-            <h5><i class="fas fa-train"></i>最寄り駅:<%= reservation.salon.station %></h5>
-            <p>値段(月極):<%= reservation.salon.price %><br>
-               貸出座席数:<%= reservation.salon.seat_number %><br>
-               その他:<%= reservation.salon.explanation %><br>
+            <h3 class="card-title"><%= link_to reservation.salon.salon_name, user_salon_path(reservation.salon) %></h3><hr>
+            <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= reservation.salon.postal_code %><%= reservation.salon.prefecture_code %><%= reservation.salon.address %></p><hr>
+            <p><i class="fas fa-train"></i>最寄り駅:<%= reservation.salon.station %></p><hr>
+            <p>値段(月極):<%= reservation.salon.price %><br><hr>
+               貸出座席数:<%= reservation.salon.seat_number %><br><hr>
+               その他:<%= reservation.salon.explanation %><br><hr>
            	   予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></p>
           </div>
       </div>

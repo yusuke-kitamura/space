@@ -13,7 +13,7 @@
       <div class="card border-dark">
           <div class="card-body offset-3">
             <h5 class="card-title">名前:<%= reservation.user.name %>様</h5>
-            	<div class="card-text">フリガナ:<%= reservation.user.kana_name %><br>電話番号:<%= reservation.user.phone_number %><br>予約サロン名:<%= reservation.salon.salon_name %><br>予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></div>
+            	<div class="card-text">フリガナ:<%= reservation.user.kana_name %><br><hr>電話番号:<%= reservation.user.phone_number %><br><hr>予約サロン名:<%= reservation.salon.salon_name %><br><hr>予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></div>
           </div>
       </div>
   <% end %>

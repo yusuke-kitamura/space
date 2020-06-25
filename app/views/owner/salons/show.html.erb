@@ -7,11 +7,11 @@
   	<div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
     <div class = "col-md-4 offset-1">
-		  <h3><%= @salon.salon_name %></h3>
-		  <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p>
-      <p>最寄駅:<%= @salon.station %></p>
-		  <p>値段:<%= @salon.price %></p>
-      <p>貸出座席数:<%= @salon.seat_number %></p>
+		  <h3><%= @salon.salon_name %></h3><hr>
+		  <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p><hr>
+      <p>最寄駅:<%= @salon.station %></p><hr>
+		  <p>値段:<%= @salon.price %></p><hr>
+      <p>貸出座席数:<%= @salon.seat_number %></p><hr>
 		  <p>その他:<%= @salon.explanation %></p>
     </div>
 	 </div>

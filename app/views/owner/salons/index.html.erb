@@ -65,11 +65,11 @@
       <div class="card border-dark">
         <%= attachment_image_tag salon, :salon_image, format: 'jpg', size: "400x400", class: "offset-2" %>
           <div class="card-body offset-2">
-            <h3 class="card-title"><%=link_to salon.salon_name, owner_salon_path(salon) %></h3>
-            <h5 class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></h5>
-            <h5><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></h5>
-            <p>値段(月極):<%= salon.price %><br>
-               貸出座席数:<%= salon.seat_number %><br>
+            <h3 class="card-title"><%=link_to salon.salon_name, owner_salon_path(salon) %></h3><hr>
+            <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p><hr>
+            <p><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></p><hr>
+            <p>値段(月極):<%= salon.price %><br><hr>
+               貸出座席数:<%= salon.seat_number %><br><hr>
                その他:<%= salon.explanation %></p>
           </div>
       </div>

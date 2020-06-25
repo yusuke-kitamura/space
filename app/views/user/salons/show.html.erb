@@ -7,11 +7,12 @@
 
     <div class = "col-md-4 offset-2">
 		  <h3><%= @salon.salon_name %></h3>
-      <h5>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></h5>
-      <h5>最寄駅:<%= @salon.station %></h5>
-      <p>値段:<%= @salon.price %><br>
-      貸出座席数:<%= @salon.seat_number %><br>
-      その他:<%= @salon.explanation %></p>
+      <hr>
+      <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p><hr>
+      <p>最寄駅:<%= @salon.station %></p><hr>
+      <p>値段:<%= @salon.price %></p><hr>
+      <p>貸出座席数:<%= @salon.seat_number %></p><hr>
+      <p>その他:<%= @salon.explanation %></p>
     </div>
 	</div><br>
 
