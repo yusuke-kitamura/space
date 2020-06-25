@@ -68,9 +68,9 @@
             <h3 class="card-title"><%=link_to salon.salon_name, owner_salon_path(salon) %></h3><hr>
             <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p><hr>
             <p><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></p><hr>
-            <p>値段(月極):<%= salon.price %><br><hr>
-               貸出座席数:<%= salon.seat_number %><br><hr>
-               その他:<%= salon.explanation %></p>
+            <p><i class="fas fa-yen-sign"></i>値段(月極):<%= salon.price %></p><hr>
+            <p><i class="fas fa-chair"></i>貸出座席数:<%= salon.seat_number %></p><hr>
+            <p>その他:<%= salon.explanation %></p>
           </div>
       </div>
   <% end %>
