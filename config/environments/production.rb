@@ -91,4 +91,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # デフォルトのurlを設定
+  config.action_mailer.default_url_options = { host: 'example.com'}
+
+  # pw変更に必要なsmtpなどの設定
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => "yusuke.kitamura1209@gmail.com",
+    :password => "rdvppldstipomlpf",
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end
