@@ -6,6 +6,7 @@ class Owner::SalonsController < ApplicationController
 
 	def create
 		@salon = Salon.new(salon_params)
+		@salon.owner_id = current_owner.id
 		if @salon.save
 			redirect_to owner_salons_path, notice: "サロンを投稿しました"
 		else
