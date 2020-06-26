@@ -92,7 +92,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # デフォルトのurlを設定
+  # smtpサーバからの転送先urlを設定
   config.action_mailer.default_url_options = { host: 'space-salon.work'}
 
   # pw変更に必要なsmtpなどの設定
