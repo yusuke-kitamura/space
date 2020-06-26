@@ -4,67 +4,75 @@
     <title>Space</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-      <script src="https://kit.fontawesome.com/61abcfe439.js" crossorigin="anonymous"></script>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-      <!-- slick -->
-      <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
-      <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> -->
-      <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+        <script src="https://kit.fontawesome.com/61abcfe439.js" crossorigin="anonymous"></script>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+        <!-- slick -->
+        <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+        <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> -->
+        <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
   </head>
 
   <body>
     <!-- header -->
-    <header class = "nav-var">
+    <header>
       <!-- <div class = "container"> -->
-      <nav class = "navbar nav w-100">
-        <%= link_to root_path do %>
-          <%= image_tag 'logo7.jpg', size: '220x120', class: "top-logo" %>
-        <% end %>
-        <% if user_signed_in? %>
-          <ul class = "nav">
-            <li class = "nav-item mr-3"><%= link_to "サロン検索", user_salons_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "お気に入りサロン", user_favorites_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "予約サロン一覧", user_reservations_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-flat-double-border" %></li>
-          </ul>
+      <nav class = "navbar navbar-expand-lg navbar-white">
+          <%= link_to root_path do %>
+              <%= image_tag 'logo7.jpg', size: '220x120', class: "top-logo" %>
+          <% end %>
 
-        <% elsif owner_signed_in? %>
-          <ul class = "nav">
-            <li class = "nav-item mr-3"><%= link_to "サロン掲載", owner_salons_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_owner_owners_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "予約者様一覧", owner_reservations_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "過去の予約者様", owner_reservations_past_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "btn btn-flat-double-border"  %></li>
-          </ul>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          </button>
 
-        <% else %>
-          <ul class = "nav justify-content-center">
-            <li class = "nav-item mr-3"><%= link_to "SPACEとは?", about_path, class: "btn btn-flat-double-border"  %></li>
-            <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_owner_session_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "スタイリスト登録", new_user_registration_path, class: "btn btn-flat-double-border" %></li>
-            <li class = "nav-item mr-3"><%= link_to "オーナー登録", new_owner_registration_path, class: "btn btn-flat-double-border" %></li>
-          </ul>
-        <% end %>
+          <div class="collapse navbar-collapse justify-content-end" id="responsiveMenu">
+
+              <% if user_signed_in? %>
+                  <ul class = "navbar-nav">
+                      <li class = "nav-item mr-3"><%= link_to "サロン検索", user_salons_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_user_users_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "お気に入りサロン", user_favorites_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "予約サロン一覧", user_reservations_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-flat-double-border" %></li>
+                  </ul>
+
+              <% elsif owner_signed_in? %>
+                  <ul class = "navbar-nav">
+                      <li class = "nav-item mr-3"><%= link_to "サロン掲載", owner_salons_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "アカウント情報", edit_owner_owners_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "予約者様一覧", owner_reservations_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "過去の予約者様", owner_reservations_past_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "ログアウト", destroy_owner_session_path, method: :delete, class: "btn btn-flat-double-border"  %></li>
+                  </ul>
+
+              <% else %>
+                  <ul class = "navbar-nav">
+                      <li class = "nav-item mr-3"><%= link_to "SPACEとは?", about_path, class: "btn btn-flat-double-border"  %></li>
+                      <li class = "nav-item mr-3"><%= link_to "スタイリストログイン", new_user_session_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "オーナーログイン", new_owner_session_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "スタイリスト登録", new_user_registration_path, class: "btn btn-flat-double-border" %></li>
+                      <li class = "nav-item mr-3"><%= link_to "オーナー登録", new_owner_registration_path, class: "btn btn-flat-double-border" %></li>
+                  </ul>
+               <% end %>
+          </div>
       </nav>
       <!-- </div> -->
     </header>
 
     <% if flash[:notice] %>
-      <p class="notice"><%= notice %></p>
+        <p class="notice"><%= notice %></p>
     <% end %>
 
     <% if flash[:alert] %>
-      <p class="alert"><%= alert %></p>
+        <p class="alert"><%= alert %></p>
     <% end %>
 
     <%= yield %>
 
     <footer class = "bottom">
-      <p class = "footer-text">yusuke kitamura.inc</p>
+        <p class = "footer-text">yusuke kitamura.inc</p>
     </footer>
 
   </body>
