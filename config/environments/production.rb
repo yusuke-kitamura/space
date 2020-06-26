@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # デフォルトのurlを設定
-  config.action_mailer.default_url_options = { host: 'example.com'}
+  config.action_mailer.default_url_options = { host: 'space-salon.work'}
 
   # pw変更に必要なsmtpなどの設定
   config.action_mailer.raise_delivery_errors = true
