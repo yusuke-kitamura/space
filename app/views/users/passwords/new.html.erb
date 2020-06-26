@@ -1,15 +1,19 @@
 <div class = "row">
-  <h2 class = "offset-3">パスワードを忘れましたか？</h2>
+  	<h2 class = "offset-3">パスワードを忘れましたか？</h2>
 </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="row"><%= f.label :email, "メールアドレス", class: "offset-4" %></div>
-  <div class="row"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-4 offset-4" %></div><br>
+  <div class="row">
+  		<%= f.label :email, "メールアドレス", class: "offset-4" %>
+  </div>
+  <div class="row">
+  		<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-4 offset-4" %>
+  </div><br>
 
   <div class="row-actions">
-    <%= f.submit "パスワードを再発行", class: "btn btn-flat-double-border col-md-4 offset-4" %>
+    	<%= f.submit "パスワードを再発行", class: "btn btn-flat-double-border col-md-4 offset-4" %>
   </div>
 <% end %>
 

@@ -1,42 +1,42 @@
 <div class = "row">
-  <h1 class = "offset-2">サロン詳細</h1>
+    <h1 class = "offset-2">サロン詳細</h1>
 </div>
 
   <div class = "row">
-    <div class = "col-md-2 offset-2"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
+      <div class = "col-md-2 offset-2"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
-    <div class = "col-md-4 offset-2">
-		  <h3><%= @salon.salon_name %></h3>
-      <hr>
-      <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p><hr>
-      <p>最寄駅:<%= @salon.station %></p><hr>
-      <p>値段:<%= @salon.price %></p><hr>
-      <p>貸出座席数:<%= @salon.seat_number %></p><hr>
-      <p>その他:<%= @salon.explanation %></p>
-    </div>
+      <div class = "col-md-4 offset-2">
+		      <h3><%= @salon.salon_name %></h3>
+          <hr>
+          <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p><hr>
+          <p>最寄駅:<%= @salon.station %></p><hr>
+          <p>値段:<%= @salon.price %></p><hr>
+          <p>貸出座席数:<%= @salon.seat_number %></p><hr>
+          <p>その他:<%= @salon.explanation %></p>
+      </div>
 	</div><br>
 
   <!-- 予約済みの場合、予約フォームは出さないように分岐。過去の日付で予約できないようにしたい -->
 <% if !Reservation.exists?(user_id:current_user.id,salon_id:@salon.id) %>
-  <%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
+    <%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
     <%= f.hidden_field :salon_id, value: @salon.id %>
-      <div class = "row">
-        <%= f.label :date, "見学日", class: "col-md-1 offset-2" %>
-      </div>
-      <div class = "row">
-        <%= f.datetime_field :date, class: "col-md-3 offset-2" %>
-      </div><br>
+        <div class = "row">
+            <%= f.label :date, "見学日", class: "col-md-1 offset-2" %>
+        </div>
+        <div class = "row">
+            <%= f.datetime_field :date, class: "col-md-3 offset-2" %>
+        </div><br>
 
-      <div class = "row-action">
-        <%= f.submit "見学予約", class: "btn btn-flat-double-border col-md-3 offset-2", data: {confirm: "本当にその時間でよろしいですか？"} %>
-      </div><br>
+        <div class = "row-action">
+            <%= f.submit "見学予約", class: "btn btn-flat-double-border col-md-3 offset-2", data: {confirm: "本当にその時間でよろしいですか？"} %>
+        </div><br>
   <% end %>
 
 <% else %>
 
-      <div class = "row">
-        <div class = "btn btn-danger col-md-3 offset-2">見学または予約済み</div>
-      </div><br>
+        <div class = "row">
+            <div class = "btn btn-danger col-md-3 offset-2">見学または予約済み</div>
+        </div><br>
 <% end %>
 
 
@@ -90,14 +90,14 @@ function codeAddress(){
 <!-- map表示ここまで -->
 
 <div class = "row">
-  <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-flat-double-border col-md-2 offset-2" %>
+    <%= link_to "一覧へ戻る", user_salons_path, class: "btn btn-flat-double-border col-md-2 offset-2" %>
 
   <!-- ajax -->
-  <div class = "btn btn-flat-double-border col-md-2 offset-2">
-    <div id="favorites_buttons_<%= @salon.id %>">
-      <%= render 'user/favorites/favorite', salon: @salon %>
+    <div class = "btn btn-flat-double-border col-md-2 offset-2">
+        <div id="favorites_buttons_<%= @salon.id %>">
+            <%= render 'user/favorites/favorite', salon: @salon %>
+        </div>
     </div>
-  </div>
 </div>
 
 

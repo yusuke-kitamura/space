@@ -1,19 +1,19 @@
 <div class = "row">
-  <h1 class = "offset-3">掲載中のサロン詳細</h1>
+    <h1 class = "offset-3">掲載中のサロン詳細</h1>
 </div>
 
 <table>
-  <div class = "row">
-  	<div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
+    <div class = "row">
+  	   <div class = "col-md-2 offset-3"><%= attachment_image_tag @salon, :salon_image, format: 'jpg', size: "400x400" %></div>
 
-    <div class = "col-md-4 offset-1">
-		  <h3><%= @salon.salon_name %></h3><hr>
-		  <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p><hr>
-      <p>最寄駅:<%= @salon.station %></p><hr>
-		  <p>値段:<%= @salon.price %></p><hr>
-      <p>貸出座席数:<%= @salon.seat_number %></p><hr>
-		  <p>その他:<%= @salon.explanation %></p>
-    </div>
+       <div class = "col-md-4 offset-1">
+		      <h3><%= @salon.salon_name %></h3><hr>
+		      <p>住所:〒<%= @salon.postal_code %><%= @salon.prefecture_code %><%= @salon.address %></p><hr>
+          <p>最寄駅:<%= @salon.station %></p><hr>
+		      <p>値段:<%= @salon.price %></p><hr>
+          <p>貸出座席数:<%= @salon.seat_number %></p><hr>
+		      <p>その他:<%= @salon.explanation %></p>
+      </div>
 	 </div>
 </table><br>
 
@@ -68,6 +68,6 @@ function codeAddress(){
 <!-- map表示ここまで -->
 
 <div class = "row">
-  <%= link_to "編集する", edit_owner_salon_path(@salon), class: "btn btn-flat-double-border col-md-2 offset-3" %>
-  <%= link_to "削除する", owner_salon_path(@salon), method: :delete, data: {confirm: "本当によろしいですか？"}, class: "btn btn-flat-double-border col-md-2 offset-1" %>
+    <%= link_to "編集する", edit_owner_salon_path(@salon), class: "btn btn-flat-double-border col-md-2 offset-3" %>
+    <%= link_to "削除する", owner_salon_path(@salon), method: :delete, data: {confirm: "本当によろしいですか？"}, class: "btn btn-flat-double-border col-md-2 offset-1" %>
 </div>

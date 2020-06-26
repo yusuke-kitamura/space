@@ -1,21 +1,21 @@
 <div class = "row">
-  <h1 class = "col-md-2 offset-5">サロン一覧</h1>
+    <h1 class = "col-md-2 offset-5">サロン一覧</h1>
 </div><br>
 
 <!-- 検索フォーム -->
 <%= search_form_for @q, url: user_salons_path do |f| %>
-  <fieldset style="width: 90%; padding: 15px; margin-bottom: 15px; margin-left: 95px; border: 7px double black; border-radius: 15px; ">
-    <legend><i class="fa fa-search" aria-hidden="true"></i>検索</legend>
-      <tr class ="row">
-        <%= f.label :prefecture_code, "エリア", class: "col-md-1 offset-3" %>
+    <fieldset style="width: 90%; padding: 15px; margin-bottom: 15px; margin-left: 95px; border: 7px double black; border-radius: 15px; ">
+        <legend><i class="fa fa-search" aria-hidden="true"></i>検索</legend>
+        <tr class ="row">
+            <%= f.label :prefecture_code, "エリア", class: "col-md-1 offset-3" %>
         <!-- last=都道府県　first=id -->
-        <%= f.collection_select(:prefecture_code_eq, Salon.prefecture_codes, :last,:first, class: "col-md-3") %><br>
+            <%= f.collection_select(:prefecture_code_eq, Salon.prefecture_codes, :last,:first, class: "col-md-3") %><br>
 
-        <%= f.label :station, "最寄り駅", class: "col-md-1 offset-3" %>
-        <%= f.search_field :station_cont, class: "col-md-3" %><br><br>
+            <%= f.label :station, "最寄り駅", class: "col-md-1 offset-3" %>
+            <%= f.search_field :station_cont, class: "col-md-3" %><br><br>
 
-        <%= f.submit "検索", class: "col-md-3 offset-4 btn btn-flat-double-border" %>
-      </tr>
+            <%= f.submit "検索", class: "col-md-3 offset-4 btn btn-flat-double-border" %>
+        </tr>
   </fieldset>
 <% end %><br><br>
 
@@ -36,9 +36,9 @@
 </div><br>
 
 <div class = "paginate">
-  <div class = "offset-5">
-    <%= paginate @salons %>
-  </div>
+    <div class = "offset-5">
+        <%= paginate @salons %>
+    </div>
 </div>
 
 
