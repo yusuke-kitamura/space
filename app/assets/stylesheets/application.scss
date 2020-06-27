@@ -67,32 +67,60 @@
   height: 400px;
 }
 
+.title-top{
+  text-align: center;
+  }
+
+.about-img{
+  width: 250px;
+  height: 200px;
+}
+
+.row-action{
+  text-align: center;
+}
+
+.row-form{
+  margin-left: 600px;
+}
+
+
 
 
 // 以下からレスポンシブ対応用の記述
 // ウィンドウ幅が最大479pxまでの場合に適用(smart phone)
-@media screen and (max-width: 479px) { 
-  .col-lg-1 {width: 8.33%;}
-  .col-lg-2 {width: 16.66%;}
-  .col-lg-3 {width: 25%;}
-  .col-lg-4 {width: 33.33%;}
-  .col-lg-5 {width: 41.66%;}
-  .col-lg-6 {width: 50%;}
-  .col-lg-7 {width: 58.33%;}
-  .col-lg-8 {width: 66.66%;}
-  .col-lg-9 {width: 75%;}
-  .col-lg-10 {width: 83.33%;}
-  .col-lg-11 {width: 91.66%;}
-  .col-lg-12 {width: 100%;}
-
-
+@media screen and (max-width: 479px) {
 
   .salon-img{
   width: 250px;
   height: 250px;
-}
+  }
 
   .card{
     width: 100%;
   }
+
+  .about-img{
+  width: 150px;
+  height: 100px;
+}
+  
+  .title-top{
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .about-text{
+    font-size: 25px;
+  }
+
+  .about-detail{
+    font-size: 15px;
+  }
+
+  .row-form{
+  margin-left: 20px;
+}
+
+
 }
