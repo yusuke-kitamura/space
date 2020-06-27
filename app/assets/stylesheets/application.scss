@@ -98,6 +98,20 @@
   margin-left: 450px;
 }
 
+fieldset{
+  width: 90%;
+  margin-left: 95px;
+}
+
+.reservation-remind{
+  margin-left: 550px; 
+  color: red;
+}
+
+.reservation{
+  margin-left: 800px;
+}
+
 
 
 
@@ -145,6 +159,24 @@
     margin-left: 0;
     height: 200px;
     width: 100%;
+  }
+
+  fieldset{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  legend{
+    font-size: 20px;
+  }
+
+  .reservation-remind{
+  margin-left: 10px; 
+  color: red;
+  }
+
+  .reservation{
+  margin-left: 100px;
   }
 
 

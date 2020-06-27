@@ -1,17 +1,17 @@
-<div class = "row">
-	 <h1 class = "offset-5">過去の予約者様情報</h1><br>
+<div class = "title-top">
+	 <h2>過去の予約者様情報</h2><br>
 </div>
 
 <% if @reservations.blank? %>
-    <div class = "row">
-		    <div class = "offset-5">過去の予約者様はいません。</div>
+    <div class = "reservation">
+		<p>過去の予約者様はいません。</p>
     </div>
 <% end %>
 	
-<div class="row row-cols-lg-4 row-cols-xs-1">
+<div class="row row-cols-lg-4 row-cols-1">
     <% @reservations.each do |reservation| %>
         <div class="card border-dark">
-            <div class="card-body offset-3">
+            <div class="card-body offset-1">
                 <h5 class="card-title">名前:<%= reservation.user.name %>様</h5>
                 <div class="card-text">フリガナ:<%= reservation.user.kana_name %><br><hr>電話番号:<%= reservation.user.phone_number %><br><hr>予約サロン名:<%= reservation.salon.salon_name %><br><hr>予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></div>
             </div>
