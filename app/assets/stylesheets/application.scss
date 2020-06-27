@@ -84,6 +84,20 @@
   margin-left: 600px;
 }
 
+.salon-show{
+  margin-left: 450px;
+}
+
+.row-salon-show{
+  margin-left: 450px;
+}
+
+#map{
+  height: 600px;
+  width: 50%;
+  margin-left: 450px;
+}
+
 
 
 
@@ -119,8 +133,19 @@
   }
 
   .row-form{
-  margin-left: 20px;
-}
+    margin-left: 20px;
+  }
+
+  .salon-show{
+    margin-left: 30px;
+    width: 100%;
+  }
+
+  #map{
+    margin-left: 0;
+    height: 200px;
+    width: 100%;
+  }
 
 
 }
