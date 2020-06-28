@@ -7,14 +7,14 @@
     <fieldset style="padding: 15px; margin-bottom: 15px; border: 7px double black; border-radius: 15px; ">
         <legend><i class="fa fa-search" aria-hidden="true"></i>検索</legend>
         <div class ="row-form">
-            <%= f.label :prefecture_code, "エリア", class: "col-lg-2 col-3" %>
+            <%= f.label :prefecture_code, "エリア", class: "col-lg-2 col-4" %>
         <!-- last=都道府県　first=id -->
             <%= f.collection_select(:prefecture_code_eq, Salon.prefecture_codes, :last,:first, class: "col-lg-3 col-3") %><br>
 
-            <%= f.label :station, "最寄り駅", class: "col-lg-1 col-3" %>
-            <%= f.search_field :station_cont, class: "col-lg-4 col-3" %><br><br>
+            <%= f.label :station, "最寄り駅", class: "col-lg-2 col-4" %>
+            <%= f.search_field :station_cont, class: "col-lg-4 col-6" %><br><br>
 
-            <%= f.submit "検索", class: "col-lg-3 col-6 btn btn-flat-double-border" %>
+            <%= f.submit "検索", class: "col-lg-6 col-10 btn btn-flat-double-border" %>
         </div>
   </fieldset>
 <% end %><br><br>
@@ -23,7 +23,7 @@
 <div class="row row-cols-lg-3 row-cols-1">
   <% @salons.each do |salon| %>
       <div class="card border-dark">
-        <%= attachment_image_tag salon, :salon_image, format: 'jpg',class: "salon-img offset-lg-1" %>
+        <%= attachment_image_tag salon, :salon_image, format: 'jpg',class: "salon-img offset-lg-1 offset-1" %>
           <div class="card-body">
             <h3 class="card-title"><%=link_to salon.salon_name, user_salon_path(salon), :style=>"color:black;" %></h3><hr>
             <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p><hr>

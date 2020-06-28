@@ -11,8 +11,8 @@
 <div class="row row-cols-lg-3 row-cols-1">
   <% @reservations.each do |reservation| %>
       <div class="card border-dark">
-        <%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', class: "salon-img offset-2" %>
-          <div class="card-body offset-2">
+        <%= attachment_image_tag reservation.salon, :salon_image, format: 'jpg', class: "salon-img offset-lg-1 offset-1" %>
+          <div class="card-body">
             <h3 class="card-title"><%= link_to reservation.salon.salon_name, user_salon_path(reservation.salon) %></h3><hr>
             <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= reservation.salon.postal_code %><%= reservation.salon.prefecture_code %><%= reservation.salon.address %></p><hr>
             <p><i class="fas fa-train"></i>最寄り駅:<%= reservation.salon.station %></p><hr>
