@@ -73,6 +73,7 @@ gem "refile-mini_magick"
 
 gem 'font-awesome-rails'
 
+# カレンダー付きの予約フォームに使用
 gem 'bootstrap4-datetime-picker-rails'
 
 gem 'pry-byebug'
@@ -89,6 +90,7 @@ group :production do
   gem 'mysql2'
 end
 
+# enumの都道府県を日本語化
 gem 'enum_help'
 
 # 日本語へ変換するため
