@@ -98,6 +98,10 @@ fieldset{
   margin-left: 80px;
 }
 
+legend{
+  width: 6px;
+}
+
 .reservation-remind{
   margin-left: 450px; 
   color: red;
@@ -115,7 +119,7 @@ fieldset{
 @media screen and (max-width: 479px) {
 
   .salon-img{
-  width: 250px;
+  width: 320px;
   height: 250px;
   }
 
@@ -126,6 +130,7 @@ fieldset{
   .about-img{
   width: 150px;
   height: 100px;
+  margin-left: 50px;
 }
   
   .title-top{
