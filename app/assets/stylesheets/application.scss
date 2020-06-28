@@ -33,11 +33,6 @@
  	color: white;
  }
 
- legend{
- 	width: 5%;
- 	margin-left: 1px;
- }
-
  .btn-flat-double-border {
   display: inline-block;
   padding: 0.5em 1em;
@@ -85,7 +80,7 @@
 }
 
 .salon-show{
-  margin-left: 450px;
+  margin-left: 335px;
 }
 
 .row-salon-show{
@@ -95,12 +90,12 @@
 #map{
   height: 600px;
   width: 50%;
-  margin-left: 450px;
+  margin-left: 335px;
 }
 
 fieldset{
   width: 90%;
-  margin-left: 95px;
+  margin-left: 80px;
 }
 
 .reservation-remind{
@@ -148,6 +143,10 @@ fieldset{
 
   .row-form{
     margin-left: 20px;
+  }
+
+  .row-action{
+  margin-left: 70px;
   }
 
   .salon-show{

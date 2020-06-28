@@ -6,15 +6,15 @@
 <%= search_form_for @q, url: user_salons_path do |f| %>
     <fieldset style="padding: 15px; margin-bottom: 15px; border: 7px double black; border-radius: 15px; ">
         <legend><i class="fa fa-search" aria-hidden="true"></i>検索</legend>
-        <div class ="row">
-            <%= f.label :prefecture_code, "エリア", class: "col-lg-1 col-3 offset-3" %>
+        <div class ="row-form">
+            <%= f.label :prefecture_code, "エリア", class: "col-lg-2 col-3" %>
         <!-- last=都道府県　first=id -->
             <%= f.collection_select(:prefecture_code_eq, Salon.prefecture_codes, :last,:first, class: "col-lg-3 col-3") %><br>
 
-            <%= f.label :station, "最寄り駅", class: "col-lg-1 col-3 offset-3" %>
-            <%= f.search_field :station_cont, class: "col-lg-3 col-3" %><br><br>
+            <%= f.label :station, "最寄り駅", class: "col-lg-1 col-3" %>
+            <%= f.search_field :station_cont, class: "col-lg-4 col-3" %><br><br>
 
-            <%= f.submit "検索", class: "col-lg-3 col-3 offset-4 btn btn-flat-double-border" %>
+            <%= f.submit "検索", class: "col-lg-3 col-6 btn btn-flat-double-border" %>
         </div>
   </fieldset>
 <% end %><br><br>
