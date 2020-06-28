@@ -24,7 +24,7 @@
   <% @salons.each do |salon| %>
       <div class="card border-dark">
         <%= attachment_image_tag salon, :salon_image, format: 'jpg',class: "salon-img offset-lg-1" %>
-          <div class="card-body offset-2">
+          <div class="card-body">
             <h3 class="card-title"><%=link_to salon.salon_name, user_salon_path(salon), :style=>"color:black;" %></h3><hr>
             <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= salon.postal_code %><%= salon.prefecture_code %><%= salon.address %></p><hr>
             <p><i class="fas fa-train"></i>最寄り駅:<%= salon.station %></p><hr>
