@@ -18,11 +18,13 @@ class User::ReservationsController < ApplicationController
 	end
 
 	def index
+		@reservations = current_user.reservations.all
 		@reservations = Reservation.where('date >= ?', Date.today)
 		# 今日以降の日付の予約のみを取得
 	end
 
 	def past_index
+		@reservations = current_user.reservations.all
 		@reservations = Reservation.where('date <= ?', Date.today)
 	end
 

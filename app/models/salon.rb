@@ -4,6 +4,7 @@ class Salon < ApplicationRecord
 	has_many :reservations, dependent: :destroy
 	has_many :favorites, dependent: :destroy
     has_many :users, through: :favorites
+    has_many :users, through: :reservations
 
     validates :salon_name, presence: true
     validates :prefecture_code, presence: true

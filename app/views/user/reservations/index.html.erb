@@ -19,10 +19,12 @@
             <p><i class="fas fa-yen-sign"></i>値段(月極):<%= reservation.salon.price %></p><hr>
             <p><i class="fas fa-chair"></i>貸出座席数:<%= reservation.salon.seat_number %></p><hr>
             <p>その他:<%= reservation.salon.explanation %></p><hr>
-           	<p>予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></p>
+            <p>予約時間:<%= reservation.date.strftime("%Y年%m月%d日%H時%M分") %></p>
           </div>
       </div>
   <% end %>
 </div>
+
+
 
 

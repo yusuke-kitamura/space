@@ -3,8 +3,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
          
   has_many :favorites, dependent: :destroy
+  has_many :reservations, dependent: :destroy
   has_many :salons, through: :favorites
-  has_many :reservation, dependent: :destroy
+  has_many :salons, through: :reservations
 
   validates :name, presence: true
   validates :kana_name, presence: true
