@@ -6,7 +6,8 @@ class User::FavoritesController < ApplicationController
 	end
 
 	def index
-		@salons = current_user.salons.all
+		@user = current_user
+		@favorites = Favorite.where(user_id: @user.id).all
 	end
 
 	def destroy
