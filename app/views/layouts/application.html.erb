@@ -8,16 +8,11 @@
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-        <!-- slick -->
-        <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
-        <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> -->
-        <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
   </head>
 
   <body>
     <!-- header -->
     <header>
-      <!-- <div class = "container"> -->
       <nav class = "navbar navbar-expand-lg navbar-white">
           <%= link_to root_path do %>
               <%= image_tag 'logo7.jpg', size: '220x120', class: "top-logo" %>
@@ -58,7 +53,6 @@
                <% end %>
           </div>
       </nav>
-      <!-- </div> -->
     </header>
 
     <% if flash[:notice] %>

@@ -68,15 +68,13 @@ gem 'jquery-rails'
 
 # 画像投稿用
 gem "refile", require: "refile/rails", github: 'manfe/refile'
-# 画像加工用
+# 画像サイズ変更用
 gem "refile-mini_magick"
 
 gem 'font-awesome-rails'
 
 # カレンダー付きの予約フォームに使用
 gem 'bootstrap4-datetime-picker-rails'
-
-gem 'pry-byebug'
 
 # ページング用
 gem 'kaminari','~> 1.2.1'
