@@ -14,9 +14,6 @@ class User::ReservationsController < ApplicationController
 		end
 	end
 
-	def destroy
-	end
-
 	def index
 		@reservations = current_user.reservations.all
 	end
