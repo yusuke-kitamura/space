@@ -5,3 +5,4 @@ class Reservation < ApplicationRecord
   validates :date, presence: true
   # 1ユーザーは1サロンに対して1予約しかできない
   validates :user_id, presence: true
+end
