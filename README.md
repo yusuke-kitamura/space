@@ -1,5 +1,5 @@
 # SPACE
-
+![logo7](https://user-images.githubusercontent.com/62242408/86798250-89ad5480-c0ab-11ea-8794-d987704190b4.jpg)
 ## サイト概要
 独立したい美容師と座席が余っていて面貸し（席を貸す）したい美容院をつなぐマッチングサイト
 
