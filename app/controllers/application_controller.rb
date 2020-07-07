@@ -2,12 +2,8 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
-
-  
-  
 	protected
 
-	# ログイン後、ログアウト後のパスを指定
 	def after_sign_in_path_for(resource)
     case resource
     when Owner
@@ -26,7 +22,6 @@ class ApplicationController < ActionController::Base
     end
   	end
 
-	# 登録、ログイン、編集可能なkeyを指定
 	def configure_permitted_parameters
 		if resource_class == User
    			devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:kana_name,:email,:phone_number])
