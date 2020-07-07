@@ -26,3 +26,6 @@
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/10Lmrt_nVO6WIm4cmyIanA6ydiFcSq-X5D-UYg-IsmcQ/edit?usp=sharing
 
+### ライセンス
+このソフトウェアは、MITライセンスのもとで公開されています。詳細はLICENSE.txtをご確認ください。
+
