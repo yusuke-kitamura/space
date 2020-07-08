@@ -22,7 +22,7 @@
     <%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
     <%= f.hidden_field :salon_id, value: @salon.id %>
         <div class = "row">
-            <%= f.datetime_field :date, class: "col-lg-3 offset-sm-1 offset-3" %>
+            <%= f.datetime_field :date, class: "col-lg-3 col-sm-6 offset-sm-1 offset-3" %>
         </div><br>
 
         <div class = "row">
