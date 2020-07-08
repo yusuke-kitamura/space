@@ -5,22 +5,22 @@
 <%= form_with model: @user, url: {controller: 'user/users', action: 'update' },local: true do |f| %>
 	<div class = "row-form">
     	<%= f.label :name, "名前" %><br>
-    	<%= f.text_field :name, class: "col-lg-6" %>
+    	<%= f.text_field :name, class: "col-lg-6 col-sm-9" %>
 	</div><br>
 
 	<div class = "row-form">
     	<%= f.label :kana_name, "フリガナ" %><br>
-    	<%= f.text_field :kana_name, class: "col-lg-6" %>
+    	<%= f.text_field :kana_name, class: "col-lg-6 col-sm-9" %>
 	</div><br>
 
 	<div class = "row-form">
     	<%= f.label :email, "メールアドレス" %><br>
-    	<%= f.email_field :email, class: "col-lg-6" %>
+    	<%= f.email_field :email, class: "col-lg-6 col-sm-9" %>
 	</div><br>
 
 	<div class = "row-form">
     	<%= f.label :phone_number, "電話番号" %><br>
-    	<%= f.text_field :phone_number, class: "col-lg-6" %>
+    	<%= f.text_field :phone_number, class: "col-lg-6 col-sm-9" %>
 	</div><br>
 
 	<div class = "row-action">

@@ -122,7 +122,7 @@ legend{
 // ウィンドウ幅が最大768pxまでの場合に適用(smart phone横画面)
 @media screen and (max-width: 768px) {
   .salon-img{
-  width: 613px;
+  width: 713px;
   height: 300px;
   }
 
@@ -140,10 +140,17 @@ legend{
 
   fieldset{
   width: 100%;
+  margin-left: 0;
   }
 
   .salon-show{
   margin-left: 0;
+  }
+
+  #map{
+  height: 400px;
+  width: 88%;
+  margin-left: 50px;
   }
 }
 

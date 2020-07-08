@@ -5,12 +5,12 @@
 <%= form_with model: @owner, url: {controller: 'owner/owners', action: 'update' },lacal: true do |f| %>
 	<div class = "row-form">
     	<%= f.label :name, "担当者様名" %><br>
-    	<%= f.text_field :name, class: "col-lg-6" %>
+    	<%= f.text_field :name, class: "col-lg-6 col-sm-9" %>
 	</div><br>
 
 	<div class = "row-form">
     	<%= f.label :email, "メールアドレス" %><br>
-    	<%= f.email_field :email, class: "col-lg-6" %>
+    	<%= f.email_field :email, class: "col-lg-6 col-sm-9" %>
 	</div><br>
 
 	<div class = "row-action">
