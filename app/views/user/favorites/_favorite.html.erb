@@ -1,9 +1,11 @@
 <% if salon.favorited_by?(current_user) %>
 	<%= link_to user_salon_favorites_path(salon), method: :delete, remote: true do %>
-      <i class="fas fa-heart heart_red fa-lg" style="color: red;" ></i>
+    	<i class="fas fa-heart heart_red fa-lg" style="color: red;" ></i>
    <% end %>
+
 <% else %>  
+
    <%= link_to user_salon_favorites_path(salon), method: :post, remote: true do %>
-     <i class="far fa-heart heart_red fa-lg" style="color: red;"></i>
+    	<i class="far fa-heart heart_red fa-lg" style="color: red;"></i>
    <% end %>
 <% end %>

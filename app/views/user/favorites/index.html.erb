@@ -1,27 +1,27 @@
 <div class = "title-top">
-	 <h2>お気に入り一覧</h1>
+    <h2>お気に入り一覧</h1>
 </div>
 
 <% if @favorites.blank? %>
     <div class = "row">
-       <div class = "offset-5">お気に入りはありません。</div>
+        <div class = "offset-5">お気に入りはありません。</div>
    </div>
 <% end %>
 
 <div class="row">
-  <% @favorites.each do |favorite| %>
-      <div class="card border-dark col-lg-4 col-sm-12">
-        <%= attachment_image_tag favorite.salon, :salon_image, format: 'jpg', class: "salon-img offset-lg-1 offset-sm-0 offset-1" %>
-          <div class="card-body">
-            <h3 class="card-title"><%=link_to favorite.salon.salon_name, user_salon_path(favorite.salon) %></h3><hr>
-            <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= favorite.salon.postal_code %><%= favorite.salon.prefecture_code %><%= favorite.salon.address %></p><hr>
-            <p><i class="fas fa-train"></i>最寄り駅:<%= favorite.salon.station %></p><hr>
-            <p><i class="fas fa-yen-sign"></i>値段(月極):<%= favorite.salon.price %></p><hr>
-            <p><i class="fas fa-chair"></i>貸出座席数:<%= favorite.salon.seat_number %></p><hr>
-            <p>その他:<%= favorite.salon.explanation %></p>
-          </div>
-      </div>
-  <% end %>
+    <% @favorites.each do |favorite| %>
+        <div class="card border-dark col-lg-4 col-sm-12">
+            <%= attachment_image_tag favorite.salon, :salon_image, format: 'jpg', class: "salon-img offset-lg-1 offset-sm-0 offset-1" %>
+                <div class="card-body">
+                    <h3 class="card-title"><%=link_to favorite.salon.salon_name, user_salon_path(favorite.salon) %></h3><hr>
+                    <p class="card-text"><i class="fas fa-store"></i>住所:〒<%= favorite.salon.postal_code %><%= favorite.salon.prefecture_code %><%= favorite.salon.address %></p><hr>
+                    <p><i class="fas fa-train"></i>最寄り駅:<%= favorite.salon.station %></p><hr>
+                    <p><i class="fas fa-yen-sign"></i>値段(月極):<%= favorite.salon.price %></p><hr>
+                    <p><i class="fas fa-chair"></i>貸出座席数:<%= favorite.salon.seat_number %></p><hr>
+                    <p>その他:<%= favorite.salon.explanation %></p>
+                </div>
+        </div>
+    <% end %>
 </div>
 
 

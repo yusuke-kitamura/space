@@ -3,44 +3,44 @@
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="row-form">
-      <%= f.label :name, "名前" %><br>
-      <%= f.text_field :name, class: "col-lg-6 col-sm-9" %>
-  </div><br>
+    <div class="row-form">
+        <%= f.label :name, "名前" %><br>
+        <%= f.text_field :name, class: "col-lg-6 col-sm-9" %>
+    </div><br>
 
-  <div class="row-form">
-      <%= f.label :kana_name, "フリガナ" %><br>
-      <%= f.text_field :kana_name, class: "col-lg-6 col-sm-9" %>
-  </div><br>
+    <div class="row-form">
+        <%= f.label :kana_name, "フリガナ" %><br>
+        <%= f.text_field :kana_name, class: "col-lg-6 col-sm-9" %>
+    </div><br>
 
-  <div class="row-form">
-      <%= f.label :email, "メールアドレス" %><br>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-lg-6 col-sm-9" %>
-  </div><br>
+    <div class="row-form">
+        <%= f.label :email, "メールアドレス" %><br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-lg-6 col-sm-9" %>
+    </div><br>
 
-  <div class="row-form">
-      <%= f.label :phone_number, "電話番号" %><br>
-      <%= f.text_field :phone_number, class: "col-lg-6 col-sm-9", placeholder: "ハイフン不要" %>
-  </div><br>
+    <div class="row-form">
+        <%= f.label :phone_number, "電話番号" %><br>
+        <%= f.text_field :phone_number, class: "col-lg-6 col-sm-9", placeholder: "ハイフン不要" %>
+    </div><br>
 
-  <div class="row-form">
-      <%= f.label :password, "パスワード" %>
-      <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br>
-      <%= f.password_field :password, autocomplete: "new-password", class: "col-lg-6 col-sm-9" %>
-  </div><br>
+    <div class="row-form">
+        <%= f.label :password, "パスワード" %>
+        <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br>
+        <%= f.password_field :password, autocomplete: "new-password", class: "col-lg-6 col-sm-9" %>
+    </div><br>
 
-  <div class="row-form">
-      <%= f.label :password_confirmation, "パスワード確認用" %><br>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-lg-6 col-sm-9" %>
-  </div></br>
+    <div class="row-form">
+        <%= f.label :password_confirmation, "パスワード確認用" %><br>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-lg-6 col-sm-9" %>
+    </div></br>
 
-  <div class="row-action">
-      <%= f.submit "登録する", class: "col-lg-6 col-8 btn btn-flat-double-border" %>
-  </div>
+    <div class="row-action">
+        <%= f.submit "登録する", class: "col-lg-6 col-8 btn btn-flat-double-border" %>
+    </div>
 <% end %>
 
 
