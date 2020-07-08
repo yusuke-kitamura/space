@@ -9,7 +9,7 @@
 <!-- ランダムで6つのサロンを表示 -->
 <div class="row">
     <% @salons.shuffle.first(6).each do |salon| %>
-        <div class="card border-dark col-sm-12">
+        <div class="card border-dark col-ls-4 col-sm-12">
             <%= attachment_image_tag salon, :salon_image, format: 'jpg', class: "salon-img offset-lg-1 offset-sm-0 offset-1" %>
                 <div class="card-body">
                     <h3 class="card-title"><%= salon.salon_name %></h3><hr>
