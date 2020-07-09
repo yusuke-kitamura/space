@@ -1,5 +1,5 @@
 class Owner::OwnersController < ApplicationController
-	before_action :authenticate_owner!
+before_action :authenticate_owner!
 	
 	def edit
 		@owner = current_owner

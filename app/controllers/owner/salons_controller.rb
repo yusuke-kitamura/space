@@ -34,7 +34,7 @@ class Owner::SalonsController < ApplicationController
 		redirect_to owner_salons_path, notice: "サロンを削除しました"
 	end
 
-	# 「都道府県」では値を取得できないためprefecture_codeをintへ変換
+	#stringでは値を取得できないためprefecture_codeをintegerへ変換
 	private
 	def salon_params
 		params.require(:salon).permit(:salon_name, :salon_image, :explanation, :postal_code, :address, :price, :seat_number, :prefecture_code, :station, :owner_id).merge(prefecture_code: params[:salon][:prefecture_code].to_i)

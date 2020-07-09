@@ -82,7 +82,7 @@ gem 'kaminari','~> 1.2.1'
 # 検索用
 gem 'ransack'
 
-# keyなどを隠すため
+# keyを隠すため
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

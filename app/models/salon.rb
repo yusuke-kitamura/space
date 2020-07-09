@@ -24,7 +24,8 @@ class Salon < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
     }
 
-    def favorited_by?(current_user) #いいねしているかどうか
+    #いいねしているかどうかを判定
+    def favorited_by?(current_user) 
     favorites.where(user_id: current_user.id).exists?
     end
 end
