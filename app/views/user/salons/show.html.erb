@@ -22,11 +22,11 @@
     <%= form_with model: @reservation, url: user_salon_reservations_path(@salon), method: :post, local: true do |f| %>
     <%= f.hidden_field :salon_id, value: @salon.id %>
         <div class = "row">
-            <%= f.datetime_field :date, class: "col-lg-3 col-sm-6 offset-sm-1 offset-3" %>
+            <%= f.datetime_field :date, class: "col-lg-3 col-sm-6 offset-lg-3 offset-3" %>
         </div><br>
 
         <div class = "row">
-            <%= f.submit "見学予約", class: "btn btn-flat-double-border col-lg-3 col-3 offset-sm-1 offset-3", data: {confirm: "本当にその時間でよろしいですか？"} %>
+            <%= f.submit "見学予約", class: "btn btn-flat-double-border col-lg-3 col-3 offset-lg-3 offset-3", data: {confirm: "本当にその時間でよろしいですか？"} %>
         </div><br>
   <% end %>
 
@@ -53,7 +53,7 @@ function initMap(){
     if (status == 'OK') {
 　　　// map.setCenterで地図が移動
       map.setCenter(results[0].geometry.location);
-　　　　　　　　　　　　
+
 	  //google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
       var marker = new google.maps.Marker({
           map: map,
