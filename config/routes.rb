@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   registrations: 'owners/registrations',
   sessions: 'owners/sessions' }
 
-  devise_for :users, controllers: {   
+  devise_for :users, controllers: {
+  omniauth_callbacks: "omniauth_callbacks"
   registrations: 'users/registrations',
   sessions: 'users/sessions' }
 
