@@ -3,7 +3,7 @@
 </div>
 
 <%= form_with model: @salon, url: {controller: 'owner/salons', action: 'update'}, local: true do |f| %>
- 	<div class = "row-form-image">
+ 	<div class = "row-form">
  		<%= attachment_image_tag @salon, :salon_image, format: 'jpg', class: "salon-img" %><br>
  		<%= f.attachment_field :salon_image %>
  	</div><br>

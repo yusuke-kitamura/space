@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :owners, controllers: {   
+  devise_for :owners, controllers: {
   registrations: 'owners/registrations',
   sessions: 'owners/sessions' }
 
   devise_for :users, controllers: {
-  omniauth_callbacks: "omniauth_callbacks"
   registrations: 'users/registrations',
   sessions: 'users/sessions' }
 
